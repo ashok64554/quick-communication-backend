@@ -1,0 +1,53 @@
+// Request Payload
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "POSITIONAL",
+    "category": "Marketing",
+    "template_name": "teat29",
+    "template_language": "en",
+    "template_type": "None",
+    "footer_text": null,
+    "header_variable": null,
+    "header_named_variable": [],
+    "message_variable": null,
+    "named_message_variable": [],
+    "market": [],
+    "template_buttons": [
+        {
+            "button_type": "PHONE_NUMBER",
+            "button_text": "Call Now",
+            "button_val_name": "phone_number",
+            "button_value": "919713753131"
+        }
+    ],
+    "button_variables": [],
+    "message": "This is a test message from NRT",
+    "marketing_type": "custom",
+    "tags": null,
+    "button_action": 0
+}
+
+// Meta
+{
+    "name": "teat29",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "POSITIONAL",
+    "components": [
+        {
+            "type": "BODY",
+            "text": "This is a test message from NRT"
+        },
+        {
+            "type": "BUTTONS",
+            "buttons": [
+                {
+                    "type": "PHONE_NUMBER",
+                    "text": "Call Now",
+                    "phone_number": "919713753131"
+                }
+            ]
+        }
+    ]
+}

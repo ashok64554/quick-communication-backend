@@ -1,0 +1,3768 @@
+{
+	"info": {
+		"_postman_id": "0d286aca-73cc-4d7f-b3f6-27532dd36e2e",
+		"name": "smspannel-v2-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1624551",
+		"_collection_link": "https://gold-meteor-469463.postman.co/workspace/Team-Workspace~37e2f180-533e-40e9-8e61-45e25a1bf4ef/collection/1624551-0d286aca-73cc-4d7f-b3f6-27532dd36e2e?action=share&source=collection_link&creator=1624551"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "check-account-status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}v1/account-status?app_key={{app_key}}&app_secret={{app_secret}}",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"account-status"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "check-account-status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}v1/account-status?app_key={{app_key}}&app_secret={{app_secret}}",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"account-status"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Feb 2025 11:31:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:31:50.814219Z\",\n    \"outtime\": \"2025-02-28T11:31:50.879329Z\",\n    \"message\": \"Account is in active status.\",\n    \"data\": {\n        \"is_account_activated\": true\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "check-balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/check-balance?app_key={{app_key}}&app_secret={{app_secret}}",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"check-balance"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "check-balance",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/check-balance?app_key={{app_key}}&app_secret={{app_secret}}",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"check-balance"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Feb 2025 11:32:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:32:15.578752Z\",\n    \"outtime\": \"2025-02-28T11:32:15.604160Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": {\n        \"user_number\": 16,\n        \"name\": \"XXXXXX XXXXX\",\n        \"email\": \"XXXXXXXXXXX@gmail.com\",\n        \"mobile\": \"XXXX209962\",\n        \"status\": \"1\",\n        \"transaction_balance\": 114830,\n        \"promotional_balance\": 0,\n        \"two_waysms_balance\": 0,\n        \"voice_sms_balance\": 0,\n        \"whatsapp_credit\": \"0.0000\",\n        \"country\": 99,\n        \"is_enabled_api_ip_security\": 0,\n        \"ut\": 2\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "approved-senderids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/approved-senderids?app_key={{app_key}}&app_secret={{app_secret}}",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"approved-senderids"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "approved-senderids",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/approved-senderids?app_key={{app_key}}&app_secret={{app_secret}}",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"approved-senderids"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Feb 2025 11:33:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:33:33.886734Z\",\n    \"outtime\": \"2025-02-28T11:33:33.950369Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": [\n        {\n            \"sender_id\": \"XXXXXX\"\n        },\n        {\n            \"sender_id\": \"XXXXXX\"\n        }\n    ],\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "templates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/templates?app_key={{app_key}}&app_secret={{app_secret}}",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"templates"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "templates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/templates?app_key={{app_key}}&app_secret={{app_secret}}",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"templates"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Feb 2025 11:34:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:34:15.792518Z\",\n    \"outtime\": \"2025-02-28T11:34:15.838132Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": [\n        {\n            \"template_name\": \"FESTIVE\",\n            \"entity_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"dlt_header_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"is_for_unicode\": 1,\n            \"dlt_message_template\": \"प्रिय मित्रों, XXXXXX की ओर से आप और आप के परिवार को रामनवमी की हार्दिक शुभकामनाएं | स्वस्थ रहे और COVID-19 से बचने के नियमो का सख्ती से पालन करे | आपकी सुरक्षा सर्वोपरि है |\",\n            \"dlt_template_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"status\": 1\n        },\n        {\n            \"template_name\": \"festive eng\",\n            \"entity_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"dlt_header_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"is_for_unicode\": 0,\n            \"dlt_message_template\": \"Dear friends,XXXXX XXXXX wishes you and your family a very Happy Ram Navmi. Stay safe, stay healthy. Please follow the COVID-19 guidelines very strictly in fight against this pandemic. Your safety is of utmost importance for US !\",\n            \"dlt_template_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"status\": 1\n        },\n        {\n            \"template_name\": \"OTP\",\n            \"entity_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"dlt_header_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"is_for_unicode\": 0,\n            \"dlt_message_template\": \"Dear {#var#}, You have requested to reset your password for XXXX. Your OTP for password reset is {#var#}. Dept of XXXX\",\n            \"dlt_template_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"status\": 1\n        }\n    ],\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "campaign-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/campaign-list?app_key={{app_key}}&app_secret={{app_secret}}&per_page_record=20&page_number=1",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"campaign-list"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								},
+								{
+									"key": "per_page_record",
+									"value": "20"
+								},
+								{
+									"key": "page_number",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "campaign-list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/campaign-list?app_key={{app_key}}&app_secret={{app_secret}}&per_page_record=5&page_number=1",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"campaign-list"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										},
+										{
+											"key": "per_page_record",
+											"value": "5"
+										},
+										{
+											"key": "page_number",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 28 Feb 2025 11:44:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99997"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:44:02.377724Z\",\n    \"outtime\": \"2025-02-28T11:44:02.387060Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1234568,\n                \"campaign_name\": \"Campaign\",\n                \"sender_id\": \"XXXXXX\",\n                \"sms_type\": \"1\",\n                \"message\": \"દેશની પ્રથમ ટ્રેક્ટર નિર્માતા કંપની આયશર ટ્રેક્ટર્સના 20 થી 60 HP માં એર કૂલ અને વોટરકૂલ મોડેલમાં ઉપલબ્ધ 2WD અને 4WD ટ્રેક્ટર્સની ખરીદી માટે ડાયરેક્ટ સંપર્ક કરો 8980448589.\",\n                \"message_type\": \"2\",\n                \"msg_length\": 172,\n                \"msg_consumed_credit\": 3,\n                \"is_flash\": 0,\n                \"campaign_send_date_time\": \"2025-02-21 17:10:35\",\n                \"total_contacts\": 3333,\n                \"total_block_number\": 1,\n                \"total_invalid_number\": 4,\n                \"total_credit_use\": 9984,\n                \"currently_delivered\": 3244,\n                \"currently_failed\": 84,\n                \"campaign_current_stage\": \"Completed\"\n            },\n            {\n                \"id\": 1234569,\n                \"campaign_name\": \"Campaign Test\",\n                \"sender_id\": \"XXXXXX\",\n                \"sms_type\": \"1\",\n                \"message\": \"દેશની પ્રથમ ટ્રેક્ટર નિર્માતા કંપની આયશર ટ્રેક્ટર્સના 20 થી 60 HP માં એર કૂલ અને વોટરકૂલ મોડેલમાં ઉપલબ્ધ 2WD અને 4WD ટ્રેક્ટર્સની ખરીદી માટે ડાયરેક્ટ સંપર્ક કરો 8980448589.\",\n                \"message_type\": \"2\",\n                \"msg_length\": 172,\n                \"msg_consumed_credit\": 3,\n                \"is_flash\": 0,\n                \"campaign_send_date_time\": \"2025-02-21 17:08:43\",\n                \"total_contacts\": 1,\n                \"total_block_number\": 0,\n                \"total_invalid_number\": 0,\n                \"total_credit_use\": 3,\n                \"currently_delivered\": 1,\n                \"currently_failed\": 0,\n                \"campaign_current_stage\": \"Completed\"\n            },\n            {\n                \"id\": 1234570,\n                \"campaign_name\": \"OTP\",\n                \"sender_id\": \"XXXXXX\",\n                \"sms_type\": \"1\",\n                \"message\": \"Dear XXXXX, You have requested to reset your password for XXXX. Your OTP for password reset is XXXXXX. Dept of XXXX\",\n                \"message_type\": \"1\",\n                \"msg_length\": 115,\n                \"msg_consumed_credit\": 1,\n                \"is_flash\": 0,\n                \"campaign_send_date_time\": \"2025-02-20 15:53:52\",\n                \"total_contacts\": 1,\n                \"total_block_number\": 0,\n                \"total_invalid_number\": 0,\n                \"total_credit_use\": 1,\n                \"currently_delivered\": 1,\n                \"currently_failed\": 0,\n                \"campaign_current_stage\": \"Completed\"\n            }\n        ],\n        \"total\": 3,\n        \"current_page\": \"1\",\n        \"per_page_record\": \"5\",\n        \"last_page\": 1\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-message",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/send-message?app_key={{app_key}}&app_secret={{app_secret}}&dlt_template_id=1007452967110801758&mobile_numbers=9713753131,8964876158,1234567890,5555555555,65478962,8528528520&message=This is your one time password {%23var%23}. valid Till next 15 Min. (NRT)&route_type=0&schedule_date=&is_flash&v1=1000&v2=580&v3=548542",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"send-message"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								},
+								{
+									"key": "dlt_template_id",
+									"value": "1007452967110801758"
+								},
+								{
+									"key": "mobile_numbers",
+									"value": "9713753131,8964876158,1234567890,5555555555,65478962,8528528520"
+								},
+								{
+									"key": "message",
+									"value": "This is your one time password {%23var%23}. valid Till next 15 Min. (NRT)"
+								},
+								{
+									"key": "route_type",
+									"value": "0"
+								},
+								{
+									"key": "schedule_date",
+									"value": ""
+								},
+								{
+									"key": "is_flash",
+									"value": null
+								},
+								{
+									"key": "v1",
+									"value": "1000"
+								},
+								{
+									"key": "v2",
+									"value": "580"
+								},
+								{
+									"key": "v3",
+									"value": "548542"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-message",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/send-message?app_key={{app_key}}&app_secret={{app_secret}}&dlt_template_id=1707173987200455484&mobile_numbers=9713753131&route_type=0&schedule_date=&is_flash&v1=1000&v2=580&v3=548542",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"send-message"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										},
+										{
+											"key": "dlt_template_id",
+											"value": "1707173987200455484"
+										},
+										{
+											"key": "mobile_numbers",
+											"value": "9713753131"
+										},
+										{
+											"key": "route_type",
+											"value": "0"
+										},
+										{
+											"key": "schedule_date",
+											"value": ""
+										},
+										{
+											"key": "is_flash",
+											"value": null
+										},
+										{
+											"key": "v1",
+											"value": "1000"
+										},
+										{
+											"key": "v2",
+											"value": "580"
+										},
+										{
+											"key": "v3",
+											"value": "548542"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 28 Feb 2025 12:10:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:10:51.609479Z\",\n    \"outtime\": \"2025-02-28T12:10:51.627161Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"dlt_template_group_id\": null,\n        \"sender_id\": \"XXXXXX\",\n        \"route_type\": 1,\n        \"sms_type\": 1,\n        \"message\": \"सबसिडी मध्ये आपली निवड झाल्याबद्दल आयशर ट्रॅक्टर्स तर्फे अभिनंदन. डिझेल व देखभाल खर्चात बचत करून अधिक नफा मिळवा. आजच जवळच्या आयशर डीलरशिपला भेट द्या किंवा कॉल करा-9370637595\",\n        \"is_flash\": 0,\n        \"campaign_send_date_time\": \"2025-02-28 17:40:51\",\n        \"is_campaign_scheduled\": 0,\n        \"message_count\": 173,\n        \"message_credit_size\": 3,\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": 3,\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"0d8cbde0-f5cd-11ef-993e-2bd877xxxxxx\",\n        \"updated_at\": \"2025-02-28T12:10:51.000000Z\",\n        \"created_at\": \"2025-02-28T12:10:51.000000Z\",\n        \"total_invalid_number\": 0\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "generate-otp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/generate-otp?app_key={{app_key}}&app_secret={{app_secret}}&dlt_template_id=1201158039515302745&mobile_number=9713753131&v1=154613&v2=436346",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"generate-otp"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								},
+								{
+									"key": "dlt_template_id",
+									"value": "1201158039515302745"
+								},
+								{
+									"key": "mobile_number",
+									"value": "9713753131"
+								},
+								{
+									"key": "v1",
+									"value": "154613"
+								},
+								{
+									"key": "v2",
+									"value": "436346"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "generate-otp",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/generate-otp?app_key={{app_key}}&app_secret={{app_secret}}&dlt_template_id=1201158039515302745&mobile_number=9713753131&v1=154613&v2=436346",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"generate-otp"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										},
+										{
+											"key": "dlt_template_id",
+											"value": "1201158039515302745"
+										},
+										{
+											"key": "mobile_number",
+											"value": "9713753131"
+										},
+										{
+											"key": "v1",
+											"value": "154613"
+										},
+										{
+											"key": "v2",
+											"value": "436346"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 12:41:35 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 12:41:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"intime\": \"2022-09-13T12:41:35.325368Z\",\n    \"outtime\": \"2022-09-13T12:41:35.439231Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"sender_id\": \"XXXXXX\",\n        \"route_type\": 1,\n        \"sms_type\": 1,\n        \"message\": \"Your request for 154613 sent to 436346 for Approval. SMS/Mail will send if request is approved. Please note - Your mobile number {#var#} is your application number. (AWGP)\",\n        \"is_flash\": 0,\n        \"campaign_send_date_time\": \"2022-09-13 18:11:35\",\n        \"message_count\": 171,\n        \"message_credit_size\": 2,\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": 2,\n        \"status\": \"Completed\",\n        \"updated_at\": \"2022-09-13T12:41:35.000000Z\",\n        \"created_at\": \"2022-09-13T12:41:35.000000Z\",\n        \"total_invalid_number\": 0\n    }\n}\n\n\n{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:10:51.609479Z\",\n    \"outtime\": \"2025-02-28T12:10:51.627161Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"dlt_template_group_id\": null,\n        \"sender_id\": \"XXXXXX\",\n        \"route_type\": 1,\n        \"sms_type\": 1,\n        \"message\": \"Your request for 154613 sent to 436346 for Approval. SMS/Mail will send if request is approved. Please note - Your mobile number {#var#} is your application number. (AWGP)\",\n        \"is_flash\": 0,\n        \"campaign_send_date_time\": \"2022-09-13 18:11:35\",\n        \"is_campaign_scheduled\": 0,\n        \"message_count\": 171,\n        \"message_credit_size\": 2,\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": 3,\n        \"status\": \"Completed\",\n        \"uuid\": \"0etcbde0-f5cd-11ef-993e-2bd877xxxxxx\",\n        \"updated_at\": \"2025-02-28T12:10:51.000000Z\",\n        \"created_at\": \"2025-02-28T12:10:51.000000Z\",\n        \"total_invalid_number\": 0\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "voice-templates",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/voice-templates?app_key={{app_key}}&app_secret={{app_secret}}",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"voice-templates"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "voice-templates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/voice-templates?app_key={{app_key}}&app_secret={{app_secret}}",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"voice-templates"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Dec 2023 12:06:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Dec 2023 12:06:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"intime\": \"2023-12-20T12:06:08.426309Z\",\n    \"outtime\": \"2023-12-20T12:06:08.452095Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": [\n        {\n            \"voice_id\": 17030727653,\n            \"file_status\": \"3\",\n            \"file_location\": \"https://example.com/voice/sample_file-15s.mp3\",\n            \"title\": \"Sample\",\n            \"file_time_duration\": \"30\",\n            \"file_mime_type\": \"audio/mp3\",\n            \"file_extension\": \"wav\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "voice-send-sms",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/voice-send-sms?app_key={{app_key}}&app_secret={{app_secret}}&voice_id=17030727653&mobile_numbers=9713753131,8964876153&schedule_date&dtmf&call_patch_number",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"voice-send-sms"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								},
+								{
+									"key": "voice_id",
+									"value": "17030727653"
+								},
+								{
+									"key": "mobile_numbers",
+									"value": "9713753131,8964876153"
+								},
+								{
+									"key": "schedule_date",
+									"value": null
+								},
+								{
+									"key": "dtmf",
+									"value": null
+								},
+								{
+									"key": "call_patch_number",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "voice-send-sms",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/voice-send-sms?app_key={{app_key}}&app_secret={{app_secret}}&voice_id=17030727653&mobile_numbers=9713753131, 8964876153&schedule_date&dtmf&call_patch_number",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"voice-send-sms"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										},
+										{
+											"key": "voice_id",
+											"value": "17030727653"
+										},
+										{
+											"key": "mobile_numbers",
+											"value": "9713753131, 8964876153"
+										},
+										{
+											"key": "schedule_date",
+											"value": null
+										},
+										{
+											"key": "dtmf",
+											"value": null
+										},
+										{
+											"key": "call_patch_number",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 09:23:03 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 09:23:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:10:51.609479Z\",\n    \"outtime\": \"2025-02-28T12:10:51.627161Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"dtmf\": null,\n        \"call_patch_number\": null,\n        \"voice_upload_id\": 2,\n        \"voice_file_path\": \"voice/sample_file-15s.mp3\",\n        \"campaign_send_date_time\": \"2023-12-21 14:53:03\",\n        \"message_credit_size\": 1,\n        \"total_contacts\": 2,\n        \"total_credit_deduct\": 2,\n        \"status\": \"Pending\",\n        \"uuid\": \"8ac940a0-9fe2-11ee-a1ed-170e6993d397\",\n        \"updated_at\": \"2023-12-21T09:23:03.000000Z\",\n        \"created_at\": \"2023-12-21T09:23:03.000000Z\"\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "voice-send-otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}v1/voice-send-otp?app_key={{app_key}}&app_secret={{app_secret}}&voice_id=17030727653&mobile_number=6393639293&otp=1120",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"voice-send-otp"
+							],
+							"query": [
+								{
+									"key": "app_key",
+									"value": "{{app_key}}"
+								},
+								{
+									"key": "app_secret",
+									"value": "{{app_secret}}"
+								},
+								{
+									"key": "voice_id",
+									"value": "17030727653"
+								},
+								{
+									"key": "mobile_number",
+									"value": "6393639293"
+								},
+								{
+									"key": "otp",
+									"value": "1120"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "voice-send-otp",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}v1/voice-send-otp?app_key={{app_key}}&app_secret={{app_secret}}&voice_id=17030727653&mobile_number=9713753131&otp=1120",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"voice-send-otp"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{app_key}}"
+										},
+										{
+											"key": "app_secret",
+											"value": "{{app_secret}}"
+										},
+										{
+											"key": "voice_id",
+											"value": "17030727653"
+										},
+										{
+											"key": "mobile_number",
+											"value": "9713753131"
+										},
+										{
+											"key": "otp",
+											"value": "1120"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 11:35:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 11:35:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:10:51.609479Z\",\n    \"outtime\": \"2025-02-28T12:10:51.627161Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"dtmf\": null,\n        \"call_patch_number\": null,\n        \"voice_upload_id\": 2,\n        \"voice_file_path\": \"voice/sample_file-15s.mp3\",\n        \"campaign_send_date_time\": \"2023-12-21 14:53:03\",\n        \"message_credit_size\": 1,\n        \"total_contacts\": 2,\n        \"total_credit_deduct\": 2,\n        \"status\": \"Pending\",\n        \"uuid\": \"8ac940a0-9fe2-11ee-a1ed-170e6993d397\",\n        \"updated_at\": \"2023-12-21T09:23:03.000000Z\",\n        \"created_at\": \"2023-12-21T09:23:03.000000Z\"\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "get-web-content",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-web-content/v/vNyP6/919893884731",
+							"host": [
+								"{{url}}get-web-content"
+							],
+							"path": [
+								"v",
+								"vNyP6",
+								"919893884731"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get-web-content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}get-web-content/v/vNyP6/919893884731",
+									"host": [
+										"{{url}}get-web-content"
+									],
+									"path": [
+										"v",
+										"vNyP6",
+										"919893884731"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Feb 2023 11:09:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Feb 2023 11:09:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"intime\": \"2023-02-20T11:09:36.668588Z\",\n    \"outtime\": \"2023-02-20T11:09:36.707859Z\",\n    \"message\": \"Records successfully fetched.\",\n    \"data\": {\n        \"short_link_id\": 1,\n        \"two_way_comm_id\": 1,\n        \"redirect_url\": null,\n        \"title\": \"Testing Two Way title2\",\n        \"content\": \"Testing content\",\n        \"bg_color\": \"#ff0000\",\n        \"content_expired\": \"2022-03-01\",\n        \"take_response\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "take-response",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"two_way_comm_id\": 1,\r\n    \"short_link_id\": 1,\r\n    \"sub_part\": \"V\",\r\n    \"token\": \"vNyP6\",\r\n    \"response_from\": 3,\r\n    \"mobile_num\": 919893884731,\r\n\r\n    \"is_interest\": 1,\r\n\r\n    \"name\": \"Ashok Sahu\",\r\n    \"email\": \"ashok@nrt.co.in\",\r\n    \"subject\": \"Testing Content\",\r\n    \"comment\": \"Testing Comment\",\r\n     \r\n    \"rating\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}take-response",
+							"host": [
+								"{{url}}take-response"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "take-response-interest",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"two_way_comm_id\": 1,\r\n    \"short_link_id\": 1,\r\n    \"sub_part\": \"V\",\r\n    \"token\": \"vNyP6\",\r\n    \"response_from\": 1,\r\n    \"mobile_num\": 919893884731,\r\n\r\n    \"is_interest\": 1,\r\n\r\n    \"name\": \"Ashok Sahu\",\r\n    \"email\": \"ashok@nrt.co.in\",\r\n    \"subject\": \"Testing Content\",\r\n    \"comment\": \"Testing Comment\",\r\n     \r\n    \"rating\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}take-response",
+									"host": [
+										"{{url}}take-response"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Feb 2023 09:40:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Feb 2023 09:40:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"intime\": \"2023-02-20T09:40:24.703998Z\",\n    \"outtime\": \"2023-02-20T09:40:24.765989Z\",\n    \"message\": \"Request successfully submitted.\",\n    \"data\": {\n        \"two_way_comm_id\": 1,\n        \"short_link_id\": 1,\n        \"mobile\": 919713753131,\n        \"is_interest\": 1,\n        \"ip\": \"127.0.0.1\",\n        \"updated_at\": \"2023-02-20T09:40:24.000000Z\",\n        \"created_at\": \"2023-02-20T09:40:24.000000Z\",\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "take-response-feedback",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"two_way_comm_id\": 1,\r\n    \"short_link_id\": 1,\r\n    \"sub_part\": \"V\",\r\n    \"token\": \"vNyP6\",\r\n    \"response_from\": 2,\r\n    \"mobile_num\": 919893884731,\r\n\r\n    \"is_interest\": 1,\r\n\r\n    \"name\": \"Ashok Sahu\",\r\n    \"email\": \"ashok@nrt.co.in\",\r\n    \"subject\": \"Testing Content\",\r\n    \"comment\": \"Testing Comment\",\r\n     \r\n    \"rating\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}take-response",
+									"host": [
+										"{{url}}take-response"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Feb 2023 09:40:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Feb 2023 09:40:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"intime\": \"2023-02-20T09:40:44.123726Z\",\n    \"outtime\": \"2023-02-20T09:40:44.330782Z\",\n    \"message\": \"Request successfully submitted.\",\n    \"data\": {\n        \"two_way_comm_id\": 1,\n        \"short_link_id\": 1,\n        \"name\": \"Ashok Sahu\",\n        \"mobile\": 919713753131,\n        \"email\": \"ashok@nrt.co.in\",\n        \"subject\": \"Testing Content\",\n        \"comment\": \"Testing Comment\",\n        \"ip\": \"127.0.0.1\",\n        \"updated_at\": \"2023-02-20T09:40:44.000000Z\",\n        \"created_at\": \"2023-02-20T09:40:44.000000Z\",\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "take-response-rating",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"two_way_comm_id\": 1,\r\n    \"short_link_id\": 1,\r\n    \"sub_part\": \"V\",\r\n    \"token\": \"vNyP6\",\r\n    \"response_from\": 3,\r\n    \"mobile_num\": 919893884731,\r\n\r\n    \"is_interest\": 1,\r\n\r\n    \"name\": \"Ashok Sahu\",\r\n    \"email\": \"ashok@nrt.co.in\",\r\n    \"subject\": \"Testing Content\",\r\n    \"comment\": \"Testing Comment\",\r\n     \r\n    \"rating\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}take-response",
+									"host": [
+										"{{url}}take-response"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Feb 2023 09:41:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Feb 2023 09:41:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99997"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"intime\": \"2023-02-20T09:41:01.711409Z\",\n    \"outtime\": \"2023-02-20T09:41:01.769957Z\",\n    \"message\": \"Request successfully submitted.\",\n    \"data\": {\n        \"two_way_comm_id\": 1,\n        \"short_link_id\": 1,\n        \"rating\": 5,\n        \"mobile\": 919713753131,\n        \"ip\": \"127.0.0.1\",\n        \"updated_at\": \"2023-02-20T09:41:01.000000Z\",\n        \"created_at\": \"2023-02-20T09:41:01.000000Z\",\n        \"id\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "check-account-status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}account-status",
+							"host": [
+								"{{url}}account-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "check-account-status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}account-status",
+									"host": [
+										"{{url}}account-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 28 Feb 2025 12:28:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:28:13.433340Z\",\n    \"outtime\": \"2025-02-28T12:28:13.436861Z\",\n    \"message\": \"Account is in active status.\",\n    \"data\": {\n        \"is_account_activated\": true\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "check-balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}check-balance",
+							"host": [
+								"{{url}}check-balance"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "check-balance",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}check-balance",
+									"host": [
+										"{{url}}check-balance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 28 Feb 2025 12:29:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:32:15.578752Z\",\n    \"outtime\": \"2025-02-28T11:32:15.604160Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": {\n        \"user_number\": 16,\n        \"name\": \"XXXXXX XXXXX\",\n        \"email\": \"XXXXXXXXXXX@gmail.com\",\n        \"mobile\": \"XXXX209962\",\n        \"status\": \"1\",\n        \"transaction_balance\": 114830,\n        \"promotional_balance\": 0,\n        \"two_waysms_balance\": 0,\n        \"voice_sms_balance\": 0,\n        \"whatsapp_credit\": \"0.0000\",\n        \"country\": 99,\n        \"is_enabled_api_ip_security\": 0,\n        \"ut\": 2\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "approved-senderids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}approved-senderids",
+							"host": [
+								"{{url}}approved-senderids"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "approved-senderids",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}approved-senderids",
+									"host": [
+										"{{url}}approved-senderids"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:24:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:24:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99997"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:33:33.886734Z\",\n    \"outtime\": \"2025-02-28T11:33:33.950369Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": [\n        {\n            \"sender_id\": \"XXXXXX\"\n        },\n        {\n            \"sender_id\": \"XXXXXX\"\n        }\n    ],\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "templates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}templates",
+							"host": [
+								"{{url}}templates"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "templates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}templates",
+									"host": [
+										"{{url}}templates"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:25:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:25:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99995"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:34:15.792518Z\",\n    \"outtime\": \"2025-02-28T11:34:15.838132Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": [\n        {\n            \"template_name\": \"FESTIVE\",\n            \"entity_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"dlt_header_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"is_for_unicode\": 1,\n            \"dlt_message_template\": \"प्रिय मित्रों, XXXXXX की ओर से आप और आप के परिवार को रामनवमी की हार्दिक शुभकामनाएं | स्वस्थ रहे और COVID-19 से बचने के नियमो का सख्ती से पालन करे | आपकी सुरक्षा सर्वोपरि है |\",\n            \"dlt_template_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"status\": 1\n        },\n        {\n            \"template_name\": \"festive eng\",\n            \"entity_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"dlt_header_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"is_for_unicode\": 0,\n            \"dlt_message_template\": \"Dear friends,XXXXX XXXXX wishes you and your family a very Happy Ram Navmi. Stay safe, stay healthy. Please follow the COVID-19 guidelines very strictly in fight against this pandemic. Your safety is of utmost importance for US !\",\n            \"dlt_template_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"status\": 1\n        },\n        {\n            \"template_name\": \"OTP\",\n            \"entity_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"dlt_header_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"is_for_unicode\": 0,\n            \"dlt_message_template\": \"Dear {#var#}, You have requested to reset your password for XXXX. Your OTP for password reset is {#var#}. Dept of XXXX\",\n            \"dlt_template_id\": \"XXXXXXXXXXXXXXXXXXX\",\n            \"status\": 1\n        }\n    ],\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "voice-templates",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}voice-templates",
+							"host": [
+								"{{url}}voice-templates"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "voice-templates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}voice-templates",
+									"host": [
+										"{{url}}voice-templates"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 12:39:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 12:39:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"intime\": \"2023-12-20T12:06:08.426309Z\",\n    \"outtime\": \"2023-12-20T12:06:08.452095Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": [\n        {\n            \"voice_id\": 17030727653,\n            \"file_status\": \"3\",\n            \"file_location\": \"https://example.com/voice/sample_file-15s.mp3\",\n            \"title\": \"Sample\",\n            \"file_time_duration\": \"30\",\n            \"file_mime_type\": \"audio/mp3\",\n            \"file_extension\": \"wav\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "campaign-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}campaign-list?per_page_record=20&page_number=1",
+							"host": [
+								"{{url}}campaign-list"
+							],
+							"query": [
+								{
+									"key": "per_page_record",
+									"value": "20"
+								},
+								{
+									"key": "page_number",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "campaign-list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}campaign-list?per_page_record=20&page_number=1",
+									"host": [
+										"{{url}}campaign-list"
+									],
+									"query": [
+										{
+											"key": "per_page_record",
+											"value": "20"
+										},
+										{
+											"key": "page_number",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:25:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:25:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99994"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T11:44:02.377724Z\",\n    \"outtime\": \"2025-02-28T11:44:02.387060Z\",\n    \"message\": \"Information successfully retrieved.\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1234568,\n                \"campaign_name\": \"Campaign\",\n                \"sender_id\": \"XXXXXX\",\n                \"sms_type\": \"1\",\n                \"message\": \"દેશની પ્રથમ ટ્રેક્ટર નિર્માતા કંપની આયશર ટ્રેક્ટર્સના 20 થી 60 HP માં એર કૂલ અને વોટરકૂલ મોડેલમાં ઉપલબ્ધ 2WD અને 4WD ટ્રેક્ટર્સની ખરીદી માટે ડાયરેક્ટ સંપર્ક કરો 8980448589.\",\n                \"message_type\": \"2\",\n                \"msg_length\": 172,\n                \"msg_consumed_credit\": 3,\n                \"is_flash\": 0,\n                \"campaign_send_date_time\": \"2025-02-21 17:10:35\",\n                \"total_contacts\": 3333,\n                \"total_block_number\": 1,\n                \"total_invalid_number\": 4,\n                \"total_credit_use\": 9984,\n                \"currently_delivered\": 3244,\n                \"currently_failed\": 84,\n                \"campaign_current_stage\": \"Completed\"\n            },\n            {\n                \"id\": 1234569,\n                \"campaign_name\": \"Campaign Test\",\n                \"sender_id\": \"XXXXXX\",\n                \"sms_type\": \"1\",\n                \"message\": \"દેશની પ્રથમ ટ્રેક્ટર નિર્માતા કંપની આયશર ટ્રેક્ટર્સના 20 થી 60 HP માં એર કૂલ અને વોટરકૂલ મોડેલમાં ઉપલબ્ધ 2WD અને 4WD ટ્રેક્ટર્સની ખરીદી માટે ડાયરેક્ટ સંપર્ક કરો 8980448589.\",\n                \"message_type\": \"2\",\n                \"msg_length\": 172,\n                \"msg_consumed_credit\": 3,\n                \"is_flash\": 0,\n                \"campaign_send_date_time\": \"2025-02-21 17:08:43\",\n                \"total_contacts\": 1,\n                \"total_block_number\": 0,\n                \"total_invalid_number\": 0,\n                \"total_credit_use\": 3,\n                \"currently_delivered\": 1,\n                \"currently_failed\": 0,\n                \"campaign_current_stage\": \"Completed\"\n            },\n            {\n                \"id\": 1234570,\n                \"campaign_name\": \"OTP\",\n                \"sender_id\": \"XXXXXX\",\n                \"sms_type\": \"1\",\n                \"message\": \"Dear XXXXX, You have requested to reset your password for XXXX. Your OTP for password reset is XXXXXX. Dept of XXXX\",\n                \"message_type\": \"1\",\n                \"msg_length\": 115,\n                \"msg_consumed_credit\": 1,\n                \"is_flash\": 0,\n                \"campaign_send_date_time\": \"2025-02-20 15:53:52\",\n                \"total_contacts\": 1,\n                \"total_block_number\": 0,\n                \"total_invalid_number\": 0,\n                \"total_credit_use\": 1,\n                \"currently_delivered\": 1,\n                \"currently_failed\": 0,\n                \"campaign_current_stage\": \"Completed\"\n            }\n        ],\n        \"total\": 3,\n        \"current_page\": \"1\",\n        \"per_page_record\": \"5\",\n        \"last_page\": 1\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dlt_template_id\" : \"1007452967110801758\",\r\n\t\"mobile_numbers\" : \"9713753131,9752654455,54857526\",\r\n\t\"message\" : \"\",\r\n\t\"route_type\" : \"0\",\r\n\t\"schedule_date\": \"\",\r\n\t\"is_flash\" : \"\",\r\n    \"v1\": 123456,\r\n    \"v2\": 654321\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-message",
+							"host": [
+								"{{url}}send-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dlt_template_id\" : \"1007452967110801758\",\r\n\t\"mobile_numbers\" : \"9713753131,9752654455,54857526\",\r\n\t\"message\" : \"\",\r\n\t\"route_type\" : \"0\",\r\n\t\"schedule_date\": \"\",\r\n\t\"is_flash\" : \"\",\r\n    \"v1\": 123456,\r\n    \"v2\": 654321\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-message",
+									"host": [
+										"{{url}}send-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:25:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:25:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:10:51.609479Z\",\n    \"outtime\": \"2025-02-28T12:10:51.627161Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"dlt_template_group_id\": null,\n        \"sender_id\": \"XXXXXX\",\n        \"route_type\": 1,\n        \"sms_type\": 1,\n        \"message\": \"सबसिडी मध्ये आपली निवड झाल्याबद्दल आयशर ट्रॅक्टर्स तर्फे अभिनंदन. डिझेल व देखभाल खर्चात बचत करून अधिक नफा मिळवा. आजच जवळच्या आयशर डीलरशिपला भेट द्या किंवा कॉल करा-9370637595\",\n        \"is_flash\": 0,\n        \"campaign_send_date_time\": \"2025-02-28 17:40:51\",\n        \"is_campaign_scheduled\": 0,\n        \"message_count\": 173,\n        \"message_credit_size\": 3,\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": 3,\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"0d8cbde0-f5cd-11ef-993e-2bd877xxxxxx\",\n        \"updated_at\": \"2025-02-28T12:10:51.000000Z\",\n        \"created_at\": \"2025-02-28T12:10:51.000000Z\",\n        \"total_invalid_number\": 0\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "generate-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dlt_template_id\" : \"1007452967110801758\",\r\n\t\"mobile_number\" : \"9713753131\",\r\n\t\"message\" : \"\",\r\n\t\"route_type\" : \"0\",\r\n\t\"schedule_date\": \"\",\r\n\t\"is_flash\" : \"\",\r\n    \"v1\": 123456,\r\n    \"v2\": 654321\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}generate-otp",
+							"host": [
+								"{{url}}generate-otp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "generate-otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dlt_template_id\" : \"1007452967110801758\",\r\n\t\"mobile_number\" : \"9713753131\",\r\n\t\"message\" : \"\",\r\n\t\"route_type\" : \"0\",\r\n\t\"schedule_date\": \"\",\r\n\t\"is_flash\" : \"\",\r\n    \"v1\": 123456,\r\n    \"v2\": 654321\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}generate-otp",
+									"host": [
+										"{{url}}generate-otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:26:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 06:26:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99997"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"intime\": \"2022-09-13T12:41:35.325368Z\",\n    \"outtime\": \"2022-09-13T12:41:35.439231Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"sender_id\": \"XXXXXX\",\n        \"route_type\": 1,\n        \"sms_type\": 1,\n        \"message\": \"Your request for 154613 sent to 436346 for Approval. SMS/Mail will send if request is approved. Please note - Your mobile number {#var#} is your application number. (AWGP)\",\n        \"is_flash\": 0,\n        \"campaign_send_date_time\": \"2022-09-13 18:11:35\",\n        \"message_count\": 171,\n        \"message_credit_size\": 2,\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": 2,\n        \"status\": \"Completed\",\n        \"updated_at\": \"2022-09-13T12:41:35.000000Z\",\n        \"created_at\": \"2022-09-13T12:41:35.000000Z\",\n        \"total_invalid_number\": 0\n    }\n}\n\n\n{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:10:51.609479Z\",\n    \"outtime\": \"2025-02-28T12:10:51.627161Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"dlt_template_group_id\": null,\n        \"sender_id\": \"XXXXXX\",\n        \"route_type\": 1,\n        \"sms_type\": 1,\n        \"message\": \"Your request for 154613 sent to 436346 for Approval. SMS/Mail will send if request is approved. Please note - Your mobile number {#var#} is your application number. (AWGP)\",\n        \"is_flash\": 0,\n        \"campaign_send_date_time\": \"2022-09-13 18:11:35\",\n        \"is_campaign_scheduled\": 0,\n        \"message_count\": 171,\n        \"message_credit_size\": 2,\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": 3,\n        \"status\": \"Completed\",\n        \"uuid\": \"0etcbde0-f5cd-11ef-993e-2bd877xxxxxx\",\n        \"updated_at\": \"2025-02-28T12:10:51.000000Z\",\n        \"created_at\": \"2025-02-28T12:10:51.000000Z\",\n        \"total_invalid_number\": 0\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "voice-send-sms",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"voice_id\": 17030727653,\r\n    \"mobile_numbers\": \"9713753131,8964876153\",\r\n    \"schedule_date\": null,\r\n    \"dtmf\": null,\r\n    \"call_patch_number\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}voice-send-sms",
+							"host": [
+								"{{url}}voice-send-sms"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "voice-send-sms",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"voice_id\": 17030727653,\r\n    \"mobile_numbers\": \"9713753131,8964876153\",\r\n    \"schedule_date\": null,\r\n    \"dtmf\": null,\r\n    \"call_patch_number\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}voice-send-sms",
+									"host": [
+										"{{url}}voice-send-sms"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 12:41:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 12:41:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:10:51.609479Z\",\n    \"outtime\": \"2025-02-28T12:10:51.627161Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"dtmf\": null,\n        \"call_patch_number\": null,\n        \"voice_upload_id\": 2,\n        \"voice_file_path\": \"voice/sample_file-15s.mp3\",\n        \"campaign_send_date_time\": \"2023-12-21 14:53:03\",\n        \"message_credit_size\": 1,\n        \"total_contacts\": 2,\n        \"total_credit_deduct\": 2,\n        \"status\": \"Pending\",\n        \"uuid\": \"8ac940a0-9fe2-11ee-a1ed-170e6993d397\",\n        \"updated_at\": \"2023-12-21T09:23:03.000000Z\",\n        \"created_at\": \"2023-12-21T09:23:03.000000Z\"\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "voice-send-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"voice_id\": 17030727653,\r\n    \"mobile_number\": \"9713753131\",\r\n    \"otp\": 1235\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}voice-send-otp",
+							"host": [
+								"{{url}}voice-send-otp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "voice-send-otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{app_key}}-{{app_secret}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"voice_id\": 17030727653,\r\n    \"mobile_number\": \"9713753131\",\r\n    \"otp\": 1235\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}voice-send-otp",
+									"host": [
+										"{{url}}voice-send-otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 12:42:45 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 12:42:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-02-28T12:10:51.609479Z\",\n    \"outtime\": \"2025-02-28T12:10:51.627161Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"dtmf\": null,\n        \"call_patch_number\": null,\n        \"voice_upload_id\": 2,\n        \"voice_file_path\": \"voice/sample_file-15s.mp3\",\n        \"campaign_send_date_time\": \"2023-12-21 14:53:03\",\n        \"message_credit_size\": 1,\n        \"total_contacts\": 2,\n        \"total_credit_deduct\": 2,\n        \"status\": \"Pending\",\n        \"uuid\": \"8ac940a0-9fe2-11ee-a1ed-170e6993d397\",\n        \"updated_at\": \"2023-12-21T09:23:03.000000Z\",\n        \"created_at\": \"2023-12-21T09:23:03.000000Z\"\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "Bearer {{app_key}}-{{app_secret}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "WhatsApp",
+			"item": [
+				{
+					"name": "normal-template-without-variable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"hello_world\"\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "normal-template-without-variable",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"hello_world\",\r\n                \"headerParameterValue\": {},\r\n                \"bodyParameterValues\": {},\r\n                \"buttons\": {\r\n                    \"actions\": []\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 13:30:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-29T13:30:44.707405Z\",\n    \"outtime\": \"2025-05-29T13:30:44.790254Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"TEMPLATE\",\n                \"template\": {\n                    \"templateId\": \"hello_world\",\n                    \"headerParameterValue\": [],\n                    \"bodyParameterValues\": [],\n                    \"buttons\": {\n                        \"actions\": []\n                    }\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-29 19:00:44\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.4567\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"1fa9d390-3c91-11f0-be1f-813542a830cc\",\n        \"updated_at\": \"2025-05-29T13:30:44.000000Z\",\n        \"created_at\": \"2025-05-29T13:30:44.000000Z\",\n        \"id\": 61\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						},
+						{
+							"name": "normal-template-without-variable-remove-parameter",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"hello_world\"\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 13:34:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99997"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-29T13:34:07.216465Z\",\n    \"outtime\": \"2025-05-29T13:34:07.288581Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"TEMPLATE\",\n                \"template\": {\n                    \"templateId\": \"hello_world\"\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-29 19:04:07\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.4567\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"985d5f00-3c91-11f0-a115-d324f16b3105\",\n        \"updated_at\": \"2025-05-29T13:34:07.000000Z\",\n        \"created_at\": \"2025-05-29T13:34:07.000000Z\",\n        \"id\": 67\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-with-header-variable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"sukhe11\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"HEAD\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-with-header-variable",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"sukhe11\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"HEAD\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 13:37:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-29T13:37:25.911314Z\",\n    \"outtime\": \"2025-05-29T13:37:25.992258Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"TEMPLATE\",\n                \"preview_url\": false,\n                \"shorten_url\": true,\n                \"template\": {\n                    \"templateId\": \"sukhe11\",\n                    \"headerParameterValue\": [\n                        \"HEAD\"\n                    ]\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-29 19:07:25\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"0ecd4d20-3c92-11f0-85b8-6f7180289157\",\n        \"updated_at\": \"2025-05-29T13:37:25.000000Z\",\n        \"created_at\": \"2025-05-29T13:37:25.000000Z\",\n        \"id\": 68\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-with-header-and-body-variable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"language\": \"hi\",\r\n            \"template\": {\r\n                \"templateId\": \"promotion_text_only\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"HEAD\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"B1\",\r\n                    \"1\": \"B2\",\r\n                    \"2\": \"B3\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-with-header-and-body-variable",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"promotion_text_only_one\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"HEAD\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"B1\",\r\n                    \"1\": \"B2\",\r\n                    \"2\": \"B3\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 13:40:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-29T13:40:39.651594Z\",\n    \"outtime\": \"2025-05-29T13:40:39.741482Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"TEMPLATE\",\n                \"preview_url\": false,\n                \"shorten_url\": true,\n                \"template\": {\n                    \"templateId\": \"promotion_text_only_one\",\n                    \"headerParameterValue\": [\n                        \"HEAD\"\n                    ],\n                    \"bodyParameterValues\": [\n                        \"B1\",\n                        \"B2\",\n                        \"B3\"\n                    ]\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-29 19:10:39\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"8248dbe0-3c92-11f0-8a1d-4127bccfdfd9\",\n        \"updated_at\": \"2025-05-29T13:40:39.000000Z\",\n        \"created_at\": \"2025-05-29T13:40:39.000000Z\",\n        \"id\": 69\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						},
+						{
+							"name": "send-wa-message-with-language-header-and-body-variable",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"language\": \"hi\",\r\n            \"template\": {\r\n                \"templateId\": \"promotion_text_only\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"HEAD\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"B1\",\r\n                    \"1\": \"B2\",\r\n                    \"2\": \"B3\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 12:46:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-30T12:46:30.116139Z\",\n    \"outtime\": \"2025-05-30T12:46:31.654301Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"TEMPLATE\",\n                \"language\": \"hi\",\n                \"template\": {\n                    \"templateId\": \"promotion_text_only\",\n                    \"headerParameterValue\": [\n                        \"HEAD\"\n                    ],\n                    \"bodyParameterValues\": [\n                        \"B1\",\n                        \"B2\",\n                        \"B3\"\n                    ]\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-30 18:16:30\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"1bee12a0-3d54-11f0-8003-619be327b73f\",\n        \"updated_at\": \"2025-05-30T12:46:30.000000Z\",\n        \"created_at\": \"2025-05-30T12:46:30.000000Z\",\n        \"id\": 96\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-with-variable-and-buttons",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"preview_url\": false,\r\n            \"shorten_url\": true,\r\n            \"template\": {\r\n                \"templateId\": \"all_mix\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"HEAD\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"B1\",\r\n                    \"1\": \"B2\",\r\n                    \"2\": \"B3\"\r\n                },\r\n                \"buttons\": {\r\n                    \"actions\": [\r\n                        {\r\n                            \"type\": \"URL\",\r\n                            \"index\": 0,\r\n                            \"payload\": \"contact\"\r\n                        },\r\n                        {\r\n                            \"type\": \"URL\",\r\n                            \"index\": 1,\r\n                            \"payload\": \"blog\"\r\n                        },\r\n                        {\r\n                            \"type\": \"COPY_CODE\",\r\n                            \"index\": 2,\r\n                            \"payload\": \"NRT10\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-with-variable-and-buttons",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"preview_url\": false,\r\n            \"shorten_url\": true,\r\n            \"template\": {\r\n                \"templateId\": \"all_mix\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"HEAD\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"B1\",\r\n                    \"1\": \"B2\",\r\n                    \"2\": \"B3\"\r\n                },\r\n                \"buttons\": {\r\n                    \"actions\": [\r\n                        {\r\n                            \"type\": \"URL\",\r\n                            \"index\": 0,\r\n                            \"payload\": \"contact\"\r\n                        },\r\n                        {\r\n                            \"type\": \"URL\",\r\n                            \"index\": 1,\r\n                            \"payload\": \"blog\"\r\n                        },\r\n                        {\r\n                            \"type\": \"COPY_CODE\",\r\n                            \"index\": 2,\r\n                            \"payload\": \"NRT10\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 May 2025 11:57:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-29T11:57:22.424808Z\",\n    \"outtime\": \"2025-05-29T11:57:22.507639Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"TEMPLATE\",\n                \"preview_url\": false,\n                \"shorten_url\": true,\n                \"template\": {\n                    \"templateId\": \"all_mix\",\n                    \"headerParameterValue\": [\n                        \"HEAD\"\n                    ],\n                    \"bodyParameterValues\": [\n                        \"B1\",\n                        \"B2\",\n                        \"B3\"\n                    ],\n                    \"buttons\": {\n                        \"actions\": [\n                            {\n                                \"type\": \"URL\",\n                                \"index\": 0,\n                                \"payload\": \"contact\"\n                            },\n                            {\n                                \"type\": \"URL\",\n                                \"index\": 1,\n                                \"payload\": \"blog\"\n                            },\n                            {\n                                \"type\": \"COPY_CODE\",\n                                \"index\": 2,\n                                \"payload\": \"NRT10\"\n                            }\n                        ]\n                    }\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-29 17:27:22\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"14715820-3c84-11f0-909a-473b936d16a5\",\n        \"updated_at\": \"2025-05-29T11:57:22.000000Z\",\n        \"created_at\": \"2025-05-29T11:57:22.000000Z\",\n        \"id\": 58\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-with-quick-reply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"vivo\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"API-H1\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\",\r\n                    \"1\": \"API-B1\"\r\n                },\r\n                \"buttons\": {\r\n                    \"quickReplies\": [\r\n                        {\r\n                            \"type\": \"QUICK_REPLY\",\r\n                            \"index\": \"0\",\r\n                            \"payload\": \"Yes\"\r\n                        },\r\n                        {\r\n                            \"type\": \"QUICK_REPLY\",\r\n                            \"index\": \"1\",\r\n                            \"payload\": \"No\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-with-quick-reply",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"vivo\",\r\n                \"headerParameterValue\": {\r\n                    \"0\": \"API-H1\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\",\r\n                    \"1\": \"API-B1\"\r\n                },\r\n                \"buttons\": {\r\n                    \"quickReplies\": [\r\n                        {\r\n                            \"type\": \"QUICK_REPLY\",\r\n                            \"index\": \"0\",\r\n                            \"payload\": \"Yes\"\r\n                        },\r\n                        {\r\n                            \"type\": \"QUICK_REPLY\",\r\n                            \"index\": \"1\",\r\n                            \"payload\": \"No\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 08:37:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-30T08:37:50.712168Z\",\n    \"outtime\": \"2025-05-30T08:37:50.901704Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"TEMPLATE\",\n                \"preview_url\": false,\n                \"shorten_url\": true,\n                \"template\": {\n                    \"templateId\": \"all_mix\",\n                    \"headerParameterValue\": [\n                        \"API-H1\"\n                    ],\n                    \"bodyParameterValues\": [\n                        \"API-B1\",\n                        \"API-B1\"\n                    ],\n                    \"buttons\": {\n                        \"quickReplies\": [\n                            {\n                                \"type\": \"QUICK_REPLY\",\n                                \"index\": \"0\",\n                                \"payload\": \"Yes\"\n                            },\n                            {\n                                \"type\": \"QUICK_REPLY\",\n                                \"index\": \"1\",\n                                \"payload\": \"No\"\n                            }\n                        ]\n                    }\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-30 14:07:50\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"5f35b4d0-3d31-11f0-b1c6-e987fe0dd0e0\",\n        \"updated_at\": \"2025-05-30T08:37:50.000000Z\",\n        \"created_at\": \"2025-05-30T08:37:50.000000Z\",\n        \"id\": 72\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-media-image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"image_with_variable_and_button\",\r\n                \"media\": {\r\n                    \"type\": \"image\",\r\n                    \"url\": \"https://ok-go.in//whatsapp-file/wa-1742459922-981.jpg\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\",\r\n                    \"1\": \"API-B1\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-media-image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"image_with_variable_and_button\",\r\n                \"media\": {\r\n                    \"type\": \"image\",\r\n                    \"url\": \"https://ok-go.in//whatsapp-file/wa-1742459922-981.jpg\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\",\r\n                    \"1\": \"API-B1\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 08:53:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-30T08:53:53.145137Z\",\n    \"outtime\": \"2025-05-30T08:53:53.251204Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"MEDIA_TEMPLATE\",\n                \"preview_url\": false,\n                \"shorten_url\": true,\n                \"template\": {\n                    \"templateId\": \"image_with_variable_and_button\",\n                    \"media\": {\n                        \"type\": \"image\",\n                        \"url\": \"https://ok-go.in//whatsapp-file/wa-1742459922-981.jpg\"\n                    },\n                    \"bodyParameterValues\": [\n                        \"API-B1\",\n                        \"API-B1\"\n                    ]\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-30 14:23:53\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"9cd22de0-3d33-11f0-8eac-956a3ce1c9cb\",\n        \"updated_at\": \"2025-05-30T08:53:53.000000Z\",\n        \"created_at\": \"2025-05-30T08:53:53.000000Z\",\n        \"id\": 75\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-media-video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"video_sample\",\r\n                \"media\": {\r\n                    \"type\": \"video\",\r\n                    \"url\": \"https://ok-go.in//whatsapp-file/wa-1742460030-415.mp4\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-media-video",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"video_sample\",\r\n                \"media\": {\r\n                    \"type\": \"video\",\r\n                    \"url\": \"https://ok-go.in//whatsapp-file/wa-1742460030-415.mp4\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 10:25:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-30T10:25:33.619870Z\",\n    \"outtime\": \"2025-05-30T10:25:33.874817Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"MEDIA_TEMPLATE\",\n                \"preview_url\": true,\n                \"shorten_url\": false,\n                \"template\": {\n                    \"templateId\": \"video_sample\",\n                    \"media\": {\n                        \"type\": \"video\",\n                        \"url\": \"https://ok-go.in//whatsapp-file/wa-1742460030-415.mp4\"\n                    },\n                    \"bodyParameterValues\": [\n                        \"API-B1\"\n                    ]\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-30 15:55:33\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"6b714130-3d40-11f0-99c3-b1d97a01570d\",\n        \"updated_at\": \"2025-05-30T10:25:33.000000Z\",\n        \"created_at\": \"2025-05-30T10:25:33.000000Z\",\n        \"id\": 77\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-media-document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"document_sample\",\r\n                \"media\": {\r\n                    \"type\": \"document\",\r\n                    \"url\": \"https:\\/\\/ok-go.in\\/whatsapp-file\\/wa-1742460058-554.pdf\",\r\n                    \"filename\": \"Ask sample file\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-media-document",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"document_sample\",\r\n                \"media\": {\r\n                    \"type\": \"document\",\r\n                    \"url\": \"https:\\/\\/ok-go.in\\/whatsapp-file\\/wa-1742460058-554.pdf\",\r\n                    \"filename\": \"Ask sample file\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:36:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99998"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-30T11:36:15.878486Z\",\n    \"outtime\": \"2025-05-30T11:36:15.969926Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"MEDIA_TEMPLATE\",\n                \"preview_url\": true,\n                \"shorten_url\": false,\n                \"template\": {\n                    \"templateId\": \"document_sample\",\n                    \"media\": {\n                        \"type\": \"document\",\n                        \"url\": \"https://ok-go.in/whatsapp-file/wa-1742460058-554.pdf\",\n                        \"filename\": \"Ask sample file\"\n                    }\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-30 17:06:15\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"4bf04150-3d4a-11f0-adfe-71ce98dc0438\",\n        \"updated_at\": \"2025-05-30T11:36:15.000000Z\",\n        \"created_at\": \"2025-05-30T11:36:15.000000Z\",\n        \"id\": 85\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-media-location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"test_location_temp\",\r\n                \"media\": {\r\n                    \"type\": \"location\",\r\n                    \"latitude\": \"23.1853294\",\r\n                    \"longitude\": \"77.4501272\",\r\n                    \"location_name\": \"NewRise Technosys Pvt Ltd\",\r\n                    \"location_address\": \"463-A, Fourth Floor, Pacific Business Center, Narmadapuram Rd, behind D-Mart, Chinar Fortune City, Bhopal, Madhya Pradesh 462026\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-media-location",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"test_location_temp\",\r\n                \"media\": {\r\n                    \"type\": \"location\",\r\n                    \"latitude\": \"23.1853294\",\r\n                    \"longitude\": \"77.4501272\",\r\n                    \"location_name\": \"NewRise Technosys Pvt Ltd\",\r\n                    \"location_address\": \"463-A, Fourth Floor, Pacific Business Center, Narmadapuram Rd, behind D-Mart, Chinar Fortune City, Bhopal, Madhya Pradesh 462026\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\"\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 12:09:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-30T12:09:08.083162Z\",\n    \"outtime\": \"2025-05-30T12:09:08.324854Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"MEDIA_TEMPLATE\",\n                \"preview_url\": true,\n                \"shorten_url\": false,\n                \"template\": {\n                    \"templateId\": \"test_location_temp\",\n                    \"media\": {\n                        \"type\": \"location\",\n                        \"latitude\": \"23.1853294\",\n                        \"longitude\": \"77.4501272\",\n                        \"location_name\": \"NewRise Technosys Pvt Ltd\",\n                        \"location_address\": \"463-A, Fourth Floor, Pacific Business Center, Narmadapuram Rd, behind D-Mart, Chinar Fortune City, Bhopal, Madhya Pradesh 462026\"\n                    },\n                    \"bodyParameterValues\": [\n                        \"API-B1\"\n                    ]\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-30 17:39:08\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"e38c03e0-3d4e-11f0-b3be-cf0ea124eafc\",\n        \"updated_at\": \"2025-05-30T12:09:08.000000Z\",\n        \"created_at\": \"2025-05-30T12:09:08.000000Z\",\n        \"id\": 89\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-media-flow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"test_flow_template\",\r\n                \"media\": {\r\n                    \"type\": \"image\",\r\n                    \"url\": \"https://ok-go.in//whatsapp-file/wa-1742459922-981.jpg\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\"\r\n                },\r\n                \"buttons\": {\r\n                    \"actionFlow\": [\r\n                        {\r\n                            \"type\": \"flow\",\r\n                            \"index\": \"0\",\r\n                            \"flow_token\": \"1014821130024099\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-media-flow",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"test_flow_template\",\r\n                \"media\": {\r\n                    \"type\": \"image\",\r\n                    \"url\": \"https://ok-go.in//whatsapp-file/wa-1742459922-981.jpg\"\r\n                },\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\"\r\n                },\r\n                \"buttons\": {\r\n                    \"actionFlow\": [\r\n                        {\r\n                            \"type\": \"flow\",\r\n                            \"index\": \"0\",\r\n                            \"flow_token\": \"1014821130024099\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 13:16:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-30T13:16:44.926124Z\",\n    \"outtime\": \"2025-05-30T13:16:46.675158Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"MEDIA_TEMPLATE\",\n                \"preview_url\": true,\n                \"shorten_url\": false,\n                \"template\": {\n                    \"templateId\": \"test_flow_template\",\n                    \"media\": {\n                        \"type\": \"image\",\n                        \"url\": \"https://ok-go.in//whatsapp-file/wa-1742459922-981.jpg\"\n                    },\n                    \"bodyParameterValues\": [\n                        \"API-B1\"\n                    ],\n                    \"buttons\": {\n                        \"actionFlow\": [\n                            {\n                                \"type\": \"flow\",\n                                \"index\": \"0\",\n                                \"flow_token\": \"1014821130024099\"\n                            }\n                        ]\n                    }\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-30 18:46:45\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.6789\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"55ac8ea0-3d58-11f0-ab99-3706929a9420\",\n        \"updated_at\": \"2025-05-30T13:16:45.000000Z\",\n        \"created_at\": \"2025-05-30T13:16:45.000000Z\",\n        \"id\": 97\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-media-catalogue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"test_catalog_custom_template\",\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\"\r\n                },\r\n                \"buttons\": {\r\n                    \"catalogue\": [\r\n                        {\r\n                            \"type\": \"catalog\",\r\n                            \"index\": \"0\",\r\n                            \"thumbnail_product_retailer_id\": \"1014821130024099\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-media-catalogue",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"MEDIA_TEMPLATE\",\r\n            \"preview_url\": true,\r\n            \"shorten_url\": false,\r\n            \"template\": {\r\n                \"templateId\": \"test_catalog_custom_template\",\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"API-B1\"\r\n                },\r\n                \"buttons\": {\r\n                    \"catalogue\": [\r\n                        {\r\n                            \"type\": \"catalog\",\r\n                            \"index\": \"0\",\r\n                            \"thumbnail_product_retailer_id\": \"1014821130024099\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 06:29:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"messaging_product\": \"whatsapp\",\n    \"to\": \"919713753131\",\n    \"type\": \"template\",\n    \"template\": {\n        \"name\": \"test_catalog_custom_template\",\n        \"language\": {\n            \"code\": \"en\"\n        },\n        \"components\": [\n            {\n                \"type\": \"body\",\n                \"parameters\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": \"API-B1\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"button\",\n                \"sub_type\": \"CATALOG\",\n                \"index\": \"0\",\n                \"parameters\": [\n                    {\n                        \"type\": \"action\",\n                        \"action\": {\n                            \"thumbnail_product_retailer_id\": \"1014821130024099\"\n                        }\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "send-wa-message-OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"testingotp\",\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"123456\"\r\n                },\r\n                \"buttons\": {\r\n                    \"actions\": [\r\n                        {\r\n                            \"type\": \"URL\",\r\n                            \"index\": 0,\r\n                            \"payload\": \"contact\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}send-wa-message",
+							"host": [
+								"{{url}}send-wa-message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send-wa-message-OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\": {\r\n        \"content\": {\r\n            \"type\": \"TEMPLATE\",\r\n            \"template\": {\r\n                \"templateId\": \"testingotp\",\r\n                \"bodyParameterValues\": {\r\n                    \"0\": \"123456\"\r\n                },\r\n                \"buttons\": {\r\n                    \"actions\": [\r\n                        {\r\n                            \"type\": \"URL\",\r\n                            \"index\": 0,\r\n                            \"payload\": \"contact\"\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        },\r\n        \"recipient\": {\r\n            \"to\": \"919713753131\",\r\n            \"recipient_type\": \"individual\"\r\n        },\r\n        \"sender\": {\r\n            \"from\": \"15550622381\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}send-wa-message",
+									"host": [
+										"{{url}}send-wa-message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 08:29:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100000"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99999"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"intime\": \"2025-05-31T08:29:51.732092Z\",\n    \"outtime\": \"2025-05-31T08:29:52.951759Z\",\n    \"message\": \"Campaign successfully processed\",\n    \"data\": {\n        \"campaign\": \"API\",\n        \"country_id\": 76,\n        \"message\": {\n            \"content\": {\n                \"type\": \"TEMPLATE\",\n                \"template\": {\n                    \"templateId\": \"testingotp\",\n                    \"bodyParameterValues\": [\n                        \"123456\"\n                    ],\n                    \"buttons\": {\n                        \"actions\": [\n                            {\n                                \"type\": \"URL\",\n                                \"index\": 0,\n                                \"payload\": \"contact\"\n                            }\n                        ]\n                    }\n                }\n            },\n            \"recipient\": {\n                \"to\": \"919713753131\",\n                \"recipient_type\": \"individual\"\n            },\n            \"sender\": {\n                \"from\": \"15550622381\"\n            }\n        },\n        \"campaign_send_date_time\": \"2025-05-31 13:59:51\",\n        \"total_contacts\": 1,\n        \"total_credit_deduct\": \"0.2355\",\n        \"status\": \"Ready-to-complete\",\n        \"uuid\": \"6c273420-3df9-11f0-bf38-930f0d30b259\",\n        \"updated_at\": \"2025-05-31T08:29:51.000000Z\",\n        \"created_at\": \"2025-05-31T08:29:51.000000Z\",\n        \"id\": 110\n    },\n    \"errors\": {},\n    \"error_code\": null\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{app_key}}-{{app_secret}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "app_key",
+			"value": "8k098HYWr1waNUeVvrpzsMOUR",
+			"type": "string"
+		},
+		{
+			"key": "app_secret",
+			"value": "uQuiP411VeQDbm6",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "https://ok-go.in/api/",
+			"type": "string"
+		}
+	]
+}

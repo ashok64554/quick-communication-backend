@@ -1,0 +1,54 @@
+// Request Payload
+
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "POSITIONAL",
+    "category": "Marketing",
+    "template_name": "test16",
+    "template_language": "en",
+    "template_type": "Text",
+    "footer_text": null,
+    "header_variable": "NRT",
+    "header_named_variable": [
+        {
+            "param_name": "1",
+            "example": null
+        }
+    ],
+    "message_variable": null,
+    "named_message_variable": [],
+    "market": [],
+    "template_buttons": [],
+    "button_variables": [],
+    "message": "This is a test message from NRT",
+    "marketing_type": "custom",
+    "header_text": "Welcome to   {{1}}",
+    "tags": null,
+    "button_action": null
+}
+
+
+// Meta
+{
+    "name": "test16",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "POSITIONAL",
+    "components": [
+        {
+            "type": "HEADER",
+            "format": "TEXT",
+            "text": "Welcome to   {{1}}",
+            "example": {
+                "header_text": [
+                    "NRT"
+                ]
+            }
+        },
+        {
+            "type": "BODY",
+            "text": "This is a test message from NRT"
+        }
+    ]
+}

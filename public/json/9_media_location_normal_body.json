@@ -1,0 +1,43 @@
+// Request Payload
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "POSITIONAL",
+    "category": "Marketing",
+    "template_name": "test23",
+    "template_language": "en",
+    "template_type": "Media",
+    "footer_text": null,
+    "header_variable": null,
+    "header_named_variable": [],
+    "message_variable": null,
+    "named_message_variable": [],
+    "market": [],
+    "template_buttons": [],
+    "button_variables": [],
+    "message": "This is a test message from NRT",
+    "marketing_type": "custom",
+    "file_type": "image",
+    "file_caption": null,
+    "tags": null,
+    "button_action": null,
+    "media_type": "LOCATION"
+}
+
+// Meta
+{
+    "name": "test23",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "POSITIONAL",
+    "components": [
+        {
+            "type": "HEADER",
+            "format": "LOCATION"
+        },
+        {
+            "type": "BODY",
+            "text": "This is a test message from NRT"
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+// Request Payload
+
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "NAMED",
+    "category": "Marketing",
+    "template_name": "test17",
+    "template_language": "en",
+    "template_type": "Text",
+    "footer_text": null,
+    "header_variable": [
+        {
+            "param_name": "company_name",
+            "example": "NRT Inc"
+        }
+    ],
+    "header_named_variable": [
+        {
+            "param_name": "company_name",
+            "example": "NRT Inc"
+        }
+    ],
+    "message_variable": [
+        {
+            "param_name": "company",
+            "example": "NewRise Tech"
+        }
+    ],
+    "named_message_variable": [
+        {
+            "param_name": "company",
+            "example": "NewRise Tech"
+        }
+    ],
+    "market": [],
+    "template_buttons": [],
+    "button_variables": [],
+    "message": "This is a test message from  {{company}}",
+    "marketing_type": "custom",
+    "header_text": "Welcome to  {{company_name}}",
+    "tags": null,
+    "button_action": null
+}
+
+
+// Meta
+{
+    "name": "test17",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "NAMED",
+    "components": [
+        {
+            "type": "HEADER",
+            "format": "TEXT",
+            "text": "Welcome to  {{company_name}}",
+            "example": {
+                "header_text_named_params": [
+                    {
+                        "param_name": "company_name",
+                        "example": "NRT Inc"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "BODY",
+            "text": "This is a test message from  {{company}}",
+            "example": {
+                "body_text_named_params": [
+                    {
+                        "param_name": "company",
+                        "example": "NewRise Tech"
+                    }
+                ]
+            }
+        }
+    ]
+}

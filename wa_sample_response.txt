@@ -1,0 +1,188 @@
+https://boiled-cypress-supermarket.glitch.me/webhook
+
+
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "114715205025905",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550622381",
+                            "phone_number_id": "105736689271434"
+                        },
+                        "statuses": [
+                            {
+                                "id": "wamid.HBgMOTE5NzEzNzUzMTMxFQIAERgSOTA4QjhFOTRFMjJENjM2NkQwAA==",
+                                "status": "failed",
+                                "timestamp": "1708434958",
+                                "recipient_id": "919713753131",
+                                "errors": [
+                                    {
+                                        "code": 131053,
+                                        "title": "Media upload error",
+                                        "message": "Media upload error",
+                                        "error_data": {
+                                            "details": "Image is invalid. Please check the image properties; supported are JPG/JPEG, RGB/RGBA, 8 bit/channels and PNG, RGB/RGBA, up to 8 bit/channel."
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "114715205025905",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550622381",
+                            "phone_number_id": "105736689271434"
+                        },
+                        "statuses": [
+                            {
+                                "id": "wamid.HBgMOTE5NzEzNzUzMTMxFQIAERgSRDhFMTNCNjM5ODc2MjMzNDFFAA==",
+                                "status": "sent",
+                                "timestamp": "1708065558",
+                                "recipient_id": "919713753131",
+                                "conversation": {
+                                    "id": "09bd6a3d945a1071927b3995bdf831ac",
+                                    "expiration_timestamp": "1708152000",
+                                    "origin": {
+                                        "type": "marketing"
+                                    }
+                                },
+                                "pricing": {
+                                    "billable": true,
+                                    "pricing_model": "CBP",
+                                    "category": "marketing"
+                                }
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "114715205025905",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550622381",
+                            "phone_number_id": "105736689271434"
+                        },
+                        "statuses": [
+                            {
+                                "id": "wamid.HBgMOTE5NzEzNzUzMTMxFQIAERgSOTdENjBBRkQxRDU1N0ExQjVDAA==",
+                                "status": "sent",
+                                "timestamp": "1708435360",
+                                "recipient_id": "919713753131",
+                                "conversation": {
+                                    "id": "264a4ed4ab18c0e7a739bcfc36b8381e",
+                                    "expiration_timestamp": "1708521780",
+                                    "origin": {
+                                        "type": "marketing"
+                                    }
+                                },
+                                "pricing": {
+                                    "billable": true,
+                                    "pricing_model": "CBP",
+                                    "category": "marketing"
+                                }
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "114715205025905",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550622381",
+                            "phone_number_id": "105736689271434"
+                        },
+                        "statuses": [
+                            {
+                                "id": "wamid.HBgMOTE5NzEzNzUzMTMxFQIAERgSOTdENjBBRkQxRDU1N0ExQjVDAA==",
+                                "status": "delivered",
+                                "timestamp": "1708435360",
+                                "recipient_id": "919713753131",
+                                "conversation": {
+                                    "id": "264a4ed4ab18c0e7a739bcfc36b8381e",
+                                    "origin": {
+                                        "type": "marketing"
+                                    }
+                                },
+                                "pricing": {
+                                    "billable": true,
+                                    "pricing_model": "CBP",
+                                    "category": "marketing"
+                                }
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "114715205025905",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550622381",
+                            "phone_number_id": "105736689271434"
+                        },
+                        "statuses": [
+                            {
+                                "id": "wamid.HBgMOTE5NzEzNzUzMTMxFQIAERgSOTdENjBBRkQxRDU1N0ExQjVDAA==",
+                                "status": "read",
+                                "timestamp": "1708435362",
+                                "recipient_id": "919713753131"
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}

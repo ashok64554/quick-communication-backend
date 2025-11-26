@@ -1,0 +1,50 @@
+// Request Payload
+
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "POSITIONAL",
+    "category": "Marketing",
+    "template_name": "test21",
+    "template_language": "en",
+    "template_type": "Media",
+    "footer_text": null,
+    "header_variable": null,
+    "header_named_variable": [],
+    "message_variable": null,
+    "named_message_variable": [],
+    "market": [],
+    "template_buttons": [],
+    "button_variables": [],
+    "message": "This is a test message from NRT",
+    "marketing_type": "custom",
+    "file_type": "image",
+    "file_caption": "Test image",
+    "tags": null,
+    "header_handle": "4::aW1hZ2UvanBlZw==:ARYiiENnLuISo9PoYxNB00UHeQJ2rREgPWL6YeFimP3Se5Mo2nwo5iCCO9D-LO1zThgkv1g6aAOjjC9cPJ4H4tWjd2vuUJF0He6yhwW79uH-IA:e:1756212376:598395012455883:100001921679048:ARa6ynmkwKDbTGQLqAo",
+    "button_action": null,
+    "media_type": "IMAGE"
+}
+
+// Meta
+{
+    "name": "test21",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "POSITIONAL",
+    "components": [
+        {
+            "type": "HEADER",
+            "format": "IMAGE",
+            "example": {
+                "header_handle": [
+                    "4::aW1hZ2UvanBlZw==:ARYiiENnLuISo9PoYxNB00UHeQJ2rREgPWL6YeFimP3Se5Mo2nwo5iCCO9D-LO1zThgkv1g6aAOjjC9cPJ4H4tWjd2vuUJF0He6yhwW79uH-IA:e:1756212376:598395012455883:100001921679048:ARa6ynmkwKDbTGQLqAo"
+                ]
+            }
+        },
+        {
+            "type": "BODY",
+            "text": "This is a test message from NRT"
+        }
+    ]
+}

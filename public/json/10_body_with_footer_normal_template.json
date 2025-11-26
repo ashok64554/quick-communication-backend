@@ -1,0 +1,42 @@
+// Request Payload
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "POSITIONAL",
+    "category": "Marketing",
+    "template_name": "test26",
+    "template_language": "en",
+    "template_type": "None",
+    "footer_text": "Form India to the world.",
+    "header_variable": null,
+    "header_named_variable": [],
+    "message_variable": null,
+    "named_message_variable": [],
+    "market": [],
+    "template_buttons": [],
+    "button_variables": [],
+    "message": "This is a test message from NRT",
+    "marketing_type": "custom",
+    "file_type": "image",
+    "file_caption": "",
+    "tags": null,
+    "button_action": null
+}
+
+// Meta
+{
+    "name": "test26",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "POSITIONAL",
+    "components": [
+        {
+            "type": "BODY",
+            "text": "This is a test message from NRT"
+        },
+        {
+            "type": "FOOTER",
+            "text": "Form India to the world."
+        }
+    ]
+}

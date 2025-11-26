@@ -1,0 +1,49 @@
+// Request Payload
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "POSITIONAL",
+    "category": "Marketing",
+    "template_name": "test25",
+    "template_language": "en",
+    "template_type": "Media",
+    "footer_text": null,
+    "header_variable": null,
+    "header_named_variable": [],
+    "message_variable": null,
+    "named_message_variable": [],
+    "market": [],
+    "template_buttons": [],
+    "button_variables": [],
+    "message": "This is a test message from NRT",
+    "marketing_type": "custom",
+    "file_type": "image",
+    "file_caption": "Sample video",
+    "tags": null,
+    "header_handle": "4::dmlkZW8vbXA0:ARZSud9cCVpjTAMryXaiPeArE7PqHwWiWLGhGnHYL2Vw-lBnk0DNmXhysvBAH0Y0kfeibm_L89V9u7m2dw6CiBxpE-BhbY-jp9GXGaPocv-NIA:e:1756213754:598395012455883:100001921679048:ARbw-kIfM0x5OQsHHR44::dmlkZW8vbXA0:ARYo-Jb-EZLYQUDsuvhh0A_rt6OrbmP6qrqGwTYErryhJbwT9UD0NRGKCJj-EYOlycJYZNrXg3MjS0f0O4zLNI7RUvc_JUc9vR3LoAtSP7vugw:e:1756213754:598395012455883:100001921679048:ARatxAmXn22rcBYM37g4::dmlkZW8vbXA0:ARbQanNjfqw979s0KFIKmcEjgGnm3daziro75RgqFKXRf7MmO0YanukWM9uTakBRzLhYkA3mesJE9FtkV_sCSwhAm76P39463XdzjyPgzRvHLg:e:1756213754:598395012455883:100001921679048:ARZNRXZR7gOrjltUYnc4::dmlkZW8vbXA0:ARYMtDXMBK5W4S6x4k7AIC8IdNHxp_2qFUkrVgVey_V9RWcUwSQywh6EccAQY0Rnl2ILz5zNmtwo9qbdDFcvGoFxXr5ZLkUDRhuka0mJnqsrHQ:e:1756213754:598395012455883:100001921679048:ARYXtWFwV6FTdIVU7yE",
+    "button_action": null,
+    "media_type": "VIDEO"
+}
+
+// Meta
+{
+    "name": "test25",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "POSITIONAL",
+    "components": [
+        {
+            "type": "HEADER",
+            "format": "VIDEO",
+            "example": {
+                "header_handle": [
+                    "4::dmlkZW8vbXA0:ARZSud9cCVpjTAMryXaiPeArE7PqHwWiWLGhGnHYL2Vw-lBnk0DNmXhysvBAH0Y0kfeibm_L89V9u7m2dw6CiBxpE-BhbY-jp9GXGaPocv-NIA:e:1756213754:598395012455883:100001921679048:ARbw-kIfM0x5OQsHHR44::dmlkZW8vbXA0:ARYo-Jb-EZLYQUDsuvhh0A_rt6OrbmP6qrqGwTYErryhJbwT9UD0NRGKCJj-EYOlycJYZNrXg3MjS0f0O4zLNI7RUvc_JUc9vR3LoAtSP7vugw:e:1756213754:598395012455883:100001921679048:ARatxAmXn22rcBYM37g4::dmlkZW8vbXA0:ARbQanNjfqw979s0KFIKmcEjgGnm3daziro75RgqFKXRf7MmO0YanukWM9uTakBRzLhYkA3mesJE9FtkV_sCSwhAm76P39463XdzjyPgzRvHLg:e:1756213754:598395012455883:100001921679048:ARZNRXZR7gOrjltUYnc4::dmlkZW8vbXA0:ARYMtDXMBK5W4S6x4k7AIC8IdNHxp_2qFUkrVgVey_V9RWcUwSQywh6EccAQY0Rnl2ILz5zNmtwo9qbdDFcvGoFxXr5ZLkUDRhuka0mJnqsrHQ:e:1756213754:598395012455883:100001921679048:ARYXtWFwV6FTdIVU7yE"
+                ]
+            }
+        },
+        {
+            "type": "BODY",
+            "text": "This is a test message from NRT"
+        }
+    ]
+}

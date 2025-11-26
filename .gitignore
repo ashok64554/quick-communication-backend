@@ -3,15 +3,31 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
-# Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
 
-# Laravel 5 & Lumen specific
 public/storage
 public/hot
 
-# Laravel 5 & Lumen specific with changed public path
+kannel
+sw
+public/etc/
+public/csv/campaign/*
+public/csv/queue/*
+public/csv/voice/*
+public/csv/wa_campaign/*
+public/csv/whatsapp/*
+
+public/uploads
+public/redis
+public/reports
+public/voice/*
+public/whatsapp/*
+public/whatsapp-file/*
+public/temp
+
+storage/framework/*
+
 public_html/storage
 public_html/hot
 
@@ -25,6 +41,10 @@ Homestead.json
 /public/build
 /storage/pail
 .env.backup
+.env-server-ok-go
+old_smsc_oursms.txt
+smsc_sample.env
+websocket.conf
 .env.production
 .phpactor.json
 auth.json

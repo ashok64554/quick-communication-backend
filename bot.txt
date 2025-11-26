@@ -1,0 +1,95 @@
+1. text
+{
+    "id": 1,
+    "type": "message",
+    "text": "Welcome User, do you want to book a ticket?",
+    "next_step": 2
+}
+
+2. text with var
+{
+    "id": 1,
+    "type": "message",
+    "text": "Welcome {{name}}, do you want to book a ticket?",
+    "variables": [
+        "name"
+    ],
+    "next_step": 2
+}
+
+3. buttons
+{
+    "id": 2,
+    "type": "buttons",
+    "text": "Choose an option:",
+    "options": [
+        {
+            "id": "yes",
+            "title": "Yes",
+            "next_step": 3
+        },
+        {
+            "id": "no",
+            "title": "No",
+            "next_step": 99
+        }
+    ]
+}
+
+4. list
+{
+    "id": 2,
+    "type": "list",
+    "text": "Select a support topic:",
+    "listName": "Support Options",
+    "buttonName": "View Topics",
+    "items": [
+        {
+            "title": "Billing Issues",
+            "description": "Payment & Invoices",
+            "next_step": 3
+        },
+        {
+            "title": "Technical Issues",
+            "description": "App not working",
+            "next_step": 4
+        }
+    ]
+}
+
+5. Input
+{
+    "id": 2,
+    "type": "input",
+    "field": "name",
+    "text": "What’s your name?",
+    "next_step": 3
+}
+
+6. media
+{
+    "id": 2,
+    "type": "media",
+    "media_type": "image",
+    "url": "https://ok-go.in/sample-file/wa-sample-image.jpg",
+    "caption": "Here is your ticket",
+    "next_step": 99
+}
+
+7. conditions
+
+8. external URL
+{
+    "id": 4,
+    "type": "api_call",
+    "method": "POST",
+    "url": "https://ok-go.in/testing-webhook",
+    "headers": {
+        "Authorization": "Bearer XYZ"
+    },
+    "payload": {
+        "pnr": "{{pnr}}"
+    },
+    "save_response_as": "booking_info", // this can be * also or any key
+    "next_step": 5
+}

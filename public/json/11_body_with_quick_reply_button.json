@@ -1,0 +1,58 @@
+// Request Payload
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "POSITIONAL",
+    "category": "Marketing",
+    "template_name": "test27",
+    "template_language": "en",
+    "template_type": "None",
+    "footer_text": null,
+    "header_variable": null,
+    "header_named_variable": [],
+    "message_variable": null,
+    "named_message_variable": [],
+    "market": [],
+    "template_buttons": [
+        {
+            "button_type": "QUICK_REPLY",
+            "button_text": "Interested"
+        },
+        {
+            "button_type": "QUICK_REPLY",
+            "button_text": "Not Interested"
+        }
+    ],
+    "button_variables": [],
+    "message": "This is a test message from NRT",
+    "marketing_type": null,
+    "tags": null,
+    "button_action": 1
+}
+
+// Meta
+{
+    "name": "test27",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "POSITIONAL",
+    "components": [
+        {
+            "type": "BODY",
+            "text": "This is a test message from NRT"
+        },
+        {
+            "type": "BUTTONS",
+            "buttons": [
+                {
+                    "type": "QUICK_REPLY",
+                    "text": "Interested"
+                },
+                {
+                    "type": "QUICK_REPLY",
+                    "text": "Not Interested"
+                }
+            ]
+        }
+    ]
+}

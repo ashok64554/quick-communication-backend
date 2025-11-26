@@ -1,0 +1,40 @@
+add submit_date on whats_app_send_sms_queues table if message submit as is_auto mode for proper time management
+
+
+8. allows format (type) webhook cases
+- sticker (p)
+- contacts (d) json
+- location (d) json
+- button (d) json
+- order (d) json
+- interactive (d) json
+
+
+9. get_whatsapp_business_profile (but not working right now. so not need to implement this)
+post {{url}}wa-business-profile/{{wa_configuration_id}}
+{
+    "user_id": 114
+}
+
+
+10. new permission enabled: account_settings_update (fb app for webhook request)
+
+
+11. template_category_update needs to implement on waupdatedlr table
+
+
+15. socket implementation -: server php version not support this package, we need to update php version 8.2.* then only we can install this.
+composer require beyondcode/laravel-websockets
+
+16. permission added: whatsapp chatbot
+
+17. chatbot crud apis
+
+
+
+
+
+
+
+
+

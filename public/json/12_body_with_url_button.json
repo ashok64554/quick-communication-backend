@@ -1,0 +1,64 @@
+// Request Payload
+{
+    "user_id": 3,
+    "configuration_id": 21,
+    "parameter_format": "POSITIONAL",
+    "category": "Marketing",
+    "template_name": "test28",
+    "template_language": "en",
+    "template_type": "None",
+    "footer_text": null,
+    "header_variable": null,
+    "header_named_variable": [],
+    "message_variable": null,
+    "named_message_variable": [],
+    "market": [],
+    "template_buttons": [
+        {
+            "button_type": "URL",
+            "button_text": "Visit Out Website",
+            "button_val_name": "url",
+            "button_value": "https:\/\/nrt.co.in\/{{1}}",
+            "url_type": "dynamic",
+            "id": "3e212190-73b6-4c19-b7e8-841b0f7e3d84",
+            "button_variables": "contact"
+        }
+    ],
+    "button_variables": [
+        {
+            "value": null,
+            "fName": "template_buttons.[0].button_value"
+        }
+    ],
+    "message": "This is a test message from NRT",
+    "marketing_type": "custom",
+    "tags": null,
+    "button_action": 0
+}
+
+// Meta
+{
+    "name": "test28",
+    "language": "en",
+    "category": "MARKETING",
+    "parameter_format": "POSITIONAL",
+    "components": [
+        {
+            "type": "BODY",
+            "text": "This is a test message from NRT"
+        },
+        {
+            "type": "BUTTONS",
+            "buttons": [
+                {
+                    "type": "URL",
+                    "text": "Visit Out Website",
+                    "url": "https:\/\/nrt.co.in\/{{1}}",
+                    "example": [
+                        "contact"
+                    ]
+                }
+            ]
+        }
+    ]
+}

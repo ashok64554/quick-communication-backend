@@ -1,0 +1,4 @@
+code,description,is_refund_applicable,is_retry_applicable
+0,failed due to netword error,0,0
+1,successfully sent,0,0
+100,failed due to netword error,1,1
