@@ -37,14 +37,14 @@ class MultipleSheetExport implements FromCollection, WithHeadings, WithTitle
         return [
           'RAND STR',
           'User Name',
-          'DLT Template ID',
-          'Mobile No.',
           'Message',
           'Used Credit',
           'Submit Date',
           'Done Date',
           'Status',
           'Code',
+          'DLT Template ID',
+          'Mobile No.',
         ];
     }
     
@@ -61,7 +61,9 @@ class MultipleSheetExport implements FromCollection, WithHeadings, WithTitle
         $from_date = !empty($this->from_date) ? $this->from_date : date('Y-m-01');
         $to_date = !empty($this->to_date) ? $this->to_date : date('Y-m-t');
         $queues = DB::table('send_sms_queues')
-            ->select('send_sms_queues.unique_key','users.name','dlt_templates.dlt_template_id','send_sms_queues.mobile','send_sms_queues.message','send_sms_queues.use_credit','send_sms_queues.submit_date','send_sms_queues.done_date','send_sms_queues.stat','send_sms_queues.err')
+            ->select('send_sms_queues.unique_key','users.name','send_sms_queues.message','send_sms_queues.use_credit','send_sms_queues.submit_date','send_sms_queues.done_date','send_sms_queues.stat','send_sms_queues.err')
+            ->addSelect(DB::raw("CONCAT(\"'\", dlt_templates.dlt_template_id, \"'\") AS dlt_template_id"))
+            ->addSelect(DB::raw("CONCAT(\"'\", send_sms_queues.mobile, \"'\") AS mobile"))
             ->join('send_sms', 'send_sms_queues.send_sms_id', 'send_sms.id')
             ->join('users', 'send_sms.user_id', 'users.id')
             ->join('dlt_templates', 'send_sms.dlt_template_id', 'dlt_templates.id')
