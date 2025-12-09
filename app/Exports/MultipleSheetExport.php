@@ -75,7 +75,9 @@ class MultipleSheetExport implements FromCollection, WithHeadings, WithTitle
         if(strtotime($from_date)<strtotime(date('Y-m-d')))
         {
             $histories = DB::table('send_sms_histories')
-            ->select('send_sms_histories.unique_key','users.name','dlt_templates.dlt_template_id','send_sms_histories.mobile','send_sms_histories.message','send_sms_histories.use_credit','send_sms_histories.submit_date','send_sms_histories.done_date','send_sms_histories.stat','send_sms_histories.err')
+            ->select('send_sms_histories.unique_key','users.name','send_sms_histories.message','send_sms_histories.use_credit','send_sms_histories.submit_date','send_sms_histories.done_date','send_sms_histories.stat','send_sms_histories.err')
+            ->addSelect(DB::raw("CONCAT(\"'\", dlt_templates.dlt_template_id, \"'\") AS dlt_template_id"))
+            ->addSelect(DB::raw("CONCAT(\"'\", send_sms_histories.mobile, \"'\") AS mobile"))
             ->join('send_sms', 'send_sms_histories.send_sms_id', 'send_sms.id')
             ->join('users', 'send_sms.user_id', 'users.id')
             ->join('dlt_templates', 'send_sms.dlt_template_id', 'dlt_templates.id')
