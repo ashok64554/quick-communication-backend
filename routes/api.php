@@ -317,6 +317,9 @@ Route::namespace('App\Http\Controllers\Api\Common')->group(function () {
             Route::post('get-report-by-time-frame', 'getReportByTimeFrame')->name('get-report-by-time-frame');
             Route::post('month-wise-submission-report', 'monthWiseSubmissionReport')->name('month-wise-submission-report');
 
+            Route::post('detailed-report', 'detailedReport')->name('detailed-report');
+            Route::post('export-detailed-report', 'exportDetailedReport')->name('export-detailed-report');
+
             Route::post('two-way-link-click-log', 'twoWayLinkClickLog')->name('two-way-link-click-log');
             Route::post('two-way-capture-record-log', 'twoWayCaptureRecordLog')->name('two-way-capture-record-log');
 

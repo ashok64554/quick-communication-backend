@@ -273,9 +273,9 @@ class CreateMySqlEventSeeder extends Seeder
         COUNT(IF(send_sms_histories.stat = 'Invalid', 0, NULL)) as invalid_history_count,
         COUNT(IF(send_sms_histories.stat = 'BLACK', 0, NULL)) as black_history_count,
         COUNT(IF(send_sms_histories.stat = 'EXPIRED', 0, NULL)) as expired_history_count,
-        COUNT(IF(send_sms_histories.stat = 'FAILED', 0, NULL)) as failed_history_count,
+        COUNT(IF(send_sms_histories.stat IN ('FAILED', 'UNDELIV'), 0, NULL)) as failed_history_count,
         COUNT(IF(send_sms_histories.stat = 'REJECTD', 0, NULL)) as rejected_history_count,
-        COUNT(IF(send_sms_histories.stat NOT IN ('DELIVRD','Invalid','BLACK','EXPIRED','FAILED','REJECTD'), 0, NULL)) as process_history_count
+        COUNT(IF(send_sms_histories.stat NOT IN ('DELIVRD','Invalid','BLACK','EXPIRED','FAILED','UNDELIV','REJECTD'), 0, NULL)) as process_history_count
         FROM send_sms
         INNER JOIN `send_sms_histories` on `send_sms_histories`.`send_sms_id` = `send_sms`.`id` WHERE date(`send_sms`.`campaign_send_date_time`) = campaign_send_date AND `send_sms`.`user_id` = userId
 
@@ -288,7 +288,7 @@ class CreateMySqlEventSeeder extends Seeder
         COUNT(IF(send_sms_queues.stat = 'Invalid', 0, NULL)) as invalid_history_count,
         COUNT(IF(send_sms_queues.stat = 'BLACK', 0, NULL)) as black_history_count,
         COUNT(IF(send_sms_queues.stat = 'EXPIRED', 0, NULL)) as expired_history_count,
-        COUNT(IF(send_sms_queues.stat = 'FAILED', 0, NULL)) as failed_history_count,
+        COUNT(IF(send_sms_queues.stat IN ('FAILED', 'UNDELIV'), 0, NULL)) as failed_history_count,
         COUNT(IF(send_sms_queues.stat = 'REJECTD', 0, NULL)) as rejected_history_count,
         COUNT(IF(send_sms_queues.stat NOT IN ('DELIVRD','Invalid','BLACK','EXPIRED','FAILED','REJECTD'), 0, NULL)) as process_history_count
         FROM send_sms

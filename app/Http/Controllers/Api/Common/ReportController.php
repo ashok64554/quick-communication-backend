@@ -25,6 +25,7 @@ use App\Exports\TwoWayResponseReportExportByCampaign;
 use App\Exports\ReportWaExport;
 use App\Exports\ReportWaExportSummary;
 use App\Exports\ReportWaConversationExport;
+use App\Exports\SmsDetailedReportExport;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Auth;
@@ -781,10 +782,10 @@ class ReportController extends Controller
                         },
                         
                         'sendSmsQueues as failed_queue_count' => function ($query) {
-                          $query->where('stat', 'FAILED');
+                          $query->whereIn('stat', ['FAILED', 'UNDELIV']);
                         },
                         'sendSmsHistories as failed_history_count' => function ($query) {
-                          $query->where('stat', 'FAILED');
+                          $query->whereIn('stat', ['FAILED', 'UNDELIV']);
                         },
                         
                         'sendSmsQueues as rejected_queue_count' => function ($query) {
@@ -795,10 +796,10 @@ class ReportController extends Controller
                         },
 
                         'sendSmsQueues as other_queue_count' => function ($query) {
-                          $query->whereNotIn('stat', ['DELIVRD','Invalid','BLACK','EXPIRED','FAILED','REJECTD']);
+                          $query->whereNotIn('stat', ['DELIVRD','Invalid','BLACK','EXPIRED','FAILED','REJECTD','UNDELIV']);
                         },
                         'sendSmsHistories as other_history_count' => function ($query) {
-                          $query->whereNotIn('stat', ['DELIVRD','Invalid','BLACK','EXPIRED','FAILED','REJECTD']);
+                          $query->whereNotIn('stat', ['DELIVRD','Invalid','BLACK','EXPIRED','FAILED','REJECTD','UNDELIV']);
                         }
                         
                     ]);
@@ -1689,7 +1690,7 @@ class ReportController extends Controller
                 return response()->json(prepareResult(true, $e->getMessage(), trans('translate.something_went_wrong'), $this->intime), config('httpcodes.internal_server_error'));
             }
         }
-        return response()->json(prepareResult(true, $e->getMessage(), trans('translate.something_went_wrong'), $this->intime), config('httpcodes.internal_server_error'));
+        return response()->json(prepareResult(true, '', trans('translate.something_went_wrong'), $this->intime), config('httpcodes.internal_server_error'));
     }
 
     public function reportExportByVoiceSmsId(Request $request)
@@ -1874,6 +1875,108 @@ class ReportController extends Controller
         try {
             $fileName = time().'-'.auth()->id().'.xlsx';
             $data = Excel::store(new ReportWaExportSummary($request->whats_app_send_sms_id, $request->whats_app_template_id, $request->configuration_id, $request->message_category, $request->from_date, $request->to_date, $request->user_id), $fileName, 'export_path');
+            $csvfile = 'reports/'.$fileName;
+            $return = [
+                'file_path' => $csvfile
+            ];
+            return response()->json(prepareResult(false, $return, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));
+        } catch (\Throwable $e) {
+            \Log::error($e);
+            return response()->json(prepareResult(true, $e->getMessage(), trans('translate.something_went_wrong'), $this->intime), config('httpcodes.internal_server_error'));
+        }
+    }
+
+    public function detailedReport(Request $request)
+    {
+        set_time_limit(0);
+        try
+        {
+            $query = \DB::table('send_sms_queues as ssq')
+                ->leftJoin('dlrcode_venders as dv', 'ssq.err', '=', 'dv.dlr_code')
+                ->leftJoin('send_sms as sms', 'ssq.send_sms_id', '=', 'sms.id')
+                ->select(
+                    'ssq.err',
+                    'dv.description',
+                    \DB::raw('COUNT(ssq.id) AS total_count')
+                )
+                ->groupBy('ssq.err')
+                ->orderBy('total_count', 'desc');
+            if(in_array(loggedInUserType(), [0,3]))
+            {
+                if(!empty($request->user_id))
+                {
+                    $query->where('sms.user_id', $request->user_id);
+                }
+            }
+            elseif(in_array(loggedInUserType(), [1]))
+            {
+                if(!empty($request->user_id))
+                {
+                    $query->where('sms.user_id', $request->user_id);
+                }
+                else
+                {
+                    $query->where('sms.user_id', auth()->id());
+                }
+            }
+            else
+            {
+                $query->where('sms.user_id', auth()->id());
+            }
+
+            if(!empty($request->sender_id))
+            {
+                $query->where('sms.sender_id', $request->sender_id);
+            }
+
+            if(!empty($request->from))
+            {
+                $query->whereDate('sms.campaign_send_date_time','>=', $request->from);
+            }
+            if(!empty($request->to))
+            {
+                $query->whereDate('sms.campaign_send_date_time','<=', $request->to);
+            }
+
+            $query = $query->get();
+
+            return response()->json(prepareResult(false, $query, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));
+        }
+        catch (\Throwable $e) 
+        {
+            DB::rollback();
+            \Log::error($e);
+            return response()->json(prepareResult(true, $e->getMessage(), trans('translate.something_went_wrong'), $this->intime), config('httpcodes.internal_server_error'));
+        }
+    }
+
+    public function exportDetailedReport(Request $request)
+    {
+        set_time_limit(0);
+        $validation = \Validator::make($request->all(), [
+            'user_id'    => 'nullable|exists:users,id',
+            'sender_id'    => 'nullable|exists:manage_sender_ids,sender_id',
+            'dlt_template_id'    => 'nullable|exists:dlt_templates,dlt_template_id',
+            'from_date'    => 'nullable|date',
+            'to_date'    => 'nullable|date',
+        ]);
+
+        if ($validation->fails()) {
+            return response()->json(prepareResult(true, $validation->messages(), trans('translate.validation_failed'), $this->intime), config('httpcodes.bad_request'));
+        }
+
+        $from = $request->from_date . " 00:00:00";
+        $to   = $request->to_date   . " 23:59:59";
+
+        $filters = [
+            'user_id'         => $request->user_id,
+            'sender_id'       => $request->sender_id,
+            'dlt_template_id' => $request->dlt_template_id,
+        ];
+
+        try {
+            $fileName = time().'-'.auth()->id().'.xlsx';
+            $data = Excel::store(new SmsDetailedReportExport($from, $to, $filters), $fileName, 'export_path');
             $csvfile = 'reports/'.$fileName;
             $return = [
                 'file_path' => $csvfile
