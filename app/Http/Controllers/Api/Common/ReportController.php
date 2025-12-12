@@ -1954,11 +1954,10 @@ class ReportController extends Controller
     {
         set_time_limit(0);
         $validation = \Validator::make($request->all(), [
-            'user_id'    => 'nullable|exists:users,id',
             'sender_id'    => 'nullable|exists:manage_sender_ids,sender_id',
             'dlt_template_id'    => 'nullable|exists:dlt_templates,dlt_template_id',
-            'from_date'    => 'nullable|date',
-            'to_date'    => 'nullable|date',
+            'from_date'    => 'required|date',
+            'to_date'    => 'required|date',
         ]);
 
         if ($validation->fails()) {
@@ -1969,7 +1968,7 @@ class ReportController extends Controller
         $to   = $request->to_date   . " 23:59:59";
 
         $filters = [
-            'user_id'         => $request->user_id,
+            'user_id'         => (empty($request->user_id) ? auth()->id() : $request->user_id),
             'sender_id'       => $request->sender_id,
             'dlt_template_id' => $request->dlt_template_id,
         ];

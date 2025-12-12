@@ -55,7 +55,7 @@ class SmsDetailedReportExport implements FromQuery, WithHeadings, WithMapping, W
         }
 
         if (!empty($this->filters['dlt_template_id'])) {
-            $query->where('dlt_templates.dlt_template_id', $this->filters['dlt_template_id']);
+            $query->where('dt.dlt_template_id', $this->filters['dlt_template_id']);
         }
 
         return $query->orderBy('ssq.id', 'desc');
