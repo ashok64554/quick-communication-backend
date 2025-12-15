@@ -65,6 +65,8 @@ return new class extends Migration
             $table->text('webhook_callback_url', 500)->nullable();
             $table->string('webhook_signing_key')->nullable();
 
+            $table->boolean('allow_detail_report')->nullable()->default(false);
+
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

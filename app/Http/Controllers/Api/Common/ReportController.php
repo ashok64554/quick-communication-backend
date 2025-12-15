@@ -38,6 +38,8 @@ use App\Models\TimeFrameReportView;
 use App\Models\TwoWayComm;
 use App\Models\ShortLink;
 use App\Models\DltTemplateGroup;
+use App\Models\Export;
+use App\Jobs\SmsDetailedCsvZipJob;
 use Cache;
 use PDF;
 
@@ -1889,58 +1891,133 @@ class ReportController extends Controller
     public function detailedReport(Request $request)
     {
         set_time_limit(0);
+        $validation = \Validator::make($request->all(), [
+            'sender_id'    => 'nullable|exists:manage_sender_ids,sender_id',
+            'from'    => 'required|date',
+            'to'    => 'required|date',
+        ]);
+
+        if ($validation->fails()) {
+            return response()->json(prepareResult(true, $validation->messages(), trans('translate.validation_failed'), $this->intime), config('httpcodes.bad_request'));
+        }
         try
         {
-            $query = \DB::table('send_sms_queues as ssq')
-                ->leftJoin('dlrcode_venders as dv', 'ssq.err', '=', 'dv.dlr_code')
-                ->leftJoin('send_sms as sms', 'ssq.send_sms_id', '=', 'sms.id')
-                ->select(
-                    'ssq.err',
-                    'dv.description',
-                    \DB::raw('COUNT(ssq.id) AS total_count')
-                )
-                ->groupBy('ssq.err')
-                ->orderBy('total_count', 'desc');
-            if(in_array(loggedInUserType(), [0,3]))
-            {
-                if(!empty($request->user_id))
-                {
-                    $query->where('sms.user_id', $request->user_id);
+            $from = $request->from . ' 00:00:00';
+            $to   = $request->to   . ' 23:59:59';
+
+            $fromDate = Carbon::parse($from);
+            $toDate   = Carbon::parse($to);
+
+            $todayStart = Carbon::today()->startOfDay();
+
+            $onlyToday = $fromDate->gte($todayStart);
+            $onlyPast  = $toDate->lt($todayStart);
+
+            $applyFilters = function ($query) use ($request) {
+
+                if (in_array(loggedInUserType(), [0, 3])) {
+                    if (!empty($request->user_id)) {
+                        $query->whereExists(function ($q) use ($request) {
+                            $q->select(DB::raw(1))
+                              ->from('send_sms')
+                              ->whereColumn('send_sms.id', 'ssq.send_sms_id')
+                              ->where('send_sms.user_id', $request->user_id);
+                        });
+                    }
                 }
-            }
-            elseif(in_array(loggedInUserType(), [1]))
-            {
-                if(!empty($request->user_id))
-                {
-                    $query->where('sms.user_id', $request->user_id);
+                elseif (in_array(loggedInUserType(), [1])) {
+                    $uid = $request->user_id ?? auth()->id();
+                    $query->whereExists(function ($q) use ($uid) {
+                        $q->select(DB::raw(1))
+                          ->from('send_sms')
+                          ->whereColumn('send_sms.id', 'ssq.send_sms_id')
+                          ->where('send_sms.user_id', $uid);
+                    });
                 }
-                else
-                {
-                    $query->where('sms.user_id', auth()->id());
+                else {
+                    $query->whereExists(function ($q) {
+                        $q->select(DB::raw(1))
+                          ->from('send_sms')
+                          ->whereColumn('send_sms.id', 'ssq.send_sms_id')
+                          ->where('send_sms.user_id', auth()->id());
+                    });
                 }
-            }
-            else
-            {
-                $query->where('sms.user_id', auth()->id());
+
+                if (!empty($request->sender_id)) {
+                    $query->whereExists(function ($q) use ($request) {
+                        $q->select(DB::raw(1))
+                          ->from('send_sms')
+                          ->whereColumn('send_sms.id', 'ssq.send_sms_id')
+                          ->where('send_sms.sender_id', $request->sender_id);
+                    });
+                }
+            };
+
+            if ($onlyToday) {
+
+                $query = DB::table('send_sms_queues as ssq')
+                    ->leftJoin('dlrcode_venders as dv', 'ssq.err', '=', 'dv.dlr_code')
+                    ->select(
+                        'ssq.err',
+                        'dv.description',
+                        DB::raw('COUNT(*) AS total_count')
+                    )
+                    ->whereNotIn('ssq.stat', ['Pending', 'ACCEPTED'])
+                    ->whereExists(function ($q) use ($from, $to) {
+                        $q->select(DB::raw(1))
+                          ->from('send_sms')
+                          ->whereColumn('send_sms.id', 'ssq.send_sms_id')
+                          ->whereBetween('send_sms.campaign_send_date_time', [$from, $to]);
+                    })
+                    ->groupBy('ssq.err', 'dv.description');
+
+                $applyFilters($query);
+
+                $data =  $query->orderByDesc('total_count')->get();
+                return response()->json(prepareResult(false, $data, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));
             }
 
-            if(!empty($request->sender_id))
-            {
-                $query->where('sms.sender_id', $request->sender_id);
+            if ($onlyPast) {
+                $query = DB::table('send_sms_histories as ssq')
+                    ->leftJoin('dlrcode_venders as dv', 'ssq.err', '=', 'dv.dlr_code')
+                    ->select(
+                        'ssq.err',
+                        'dv.description',
+                        DB::raw('COUNT(*) AS total_count')
+                    )
+                    ->whereNotIn('ssq.stat', ['Pending', 'ACCEPTED'])
+                    ->whereExists(function ($q) use ($from, $to) {
+                        $q->select(DB::raw(1))
+                          ->from('send_sms')
+                          ->whereColumn('send_sms.id', 'ssq.send_sms_id')
+                          ->whereBetween('send_sms.campaign_send_date_time', [$from, $to]);
+                    })
+                    ->groupBy('ssq.err', 'dv.description');
+
+                $applyFilters($query);
+                $data =  $query->orderByDesc('total_count')->get();
+                return response()->json(prepareResult(false, $data, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));
             }
 
-            if(!empty($request->from))
-            {
-                $query->whereDate('sms.campaign_send_date_time','>=', $request->from);
-            }
-            if(!empty($request->to))
-            {
-                $query->whereDate('sms.campaign_send_date_time','<=', $request->to);
-            }
+            $queues = DB::table('send_sms_queues as ssq')
+                ->select('err', DB::raw('COUNT(*) total_count'))
+                ->whereNotIn('stat', ['Pending', 'ACCEPTED'])
+                ->groupBy('err');
 
-            $query = $query->get();
+            $histories = DB::table('send_sms_histories as ssq')
+                ->select('err', DB::raw('COUNT(*) total_count'))
+                ->whereNotIn('stat', ['Pending', 'ACCEPTED'])
+                ->groupBy('err');
 
-            return response()->json(prepareResult(false, $query, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));
+            $data = DB::query()
+                ->fromSub($queues->unionAll($histories), 't')
+                ->select('err', DB::raw('SUM(total_count) total_count'))
+                ->groupBy('err')
+                ->orderByDesc('total_count')
+                ->get();
+
+
+            return response()->json(prepareResult(false, $data, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));
         }
         catch (\Throwable $e) 
         {
@@ -1952,38 +2029,189 @@ class ReportController extends Controller
 
     public function exportDetailedReport(Request $request)
     {
-        set_time_limit(0);
         $validation = \Validator::make($request->all(), [
-            'sender_id'    => 'nullable|exists:manage_sender_ids,sender_id',
-            'dlt_template_id'    => 'nullable|exists:dlt_templates,dlt_template_id',
-            'from_date'    => 'required|date',
-            'to_date'    => 'required|date',
+            'sender_id'        => 'nullable|exists:manage_sender_ids,sender_id',
+            'dlt_template_id'  => 'nullable|exists:dlt_templates,dlt_template_id',
+            'from_date'        => 'required|date',
+            'to_date'          => 'required|date',
         ]);
 
         if ($validation->fails()) {
-            return response()->json(prepareResult(true, $validation->messages(), trans('translate.validation_failed'), $this->intime), config('httpcodes.bad_request'));
+            return response()->json(
+                prepareResult(true, $validation->messages(), trans('translate.validation_failed'), $this->intime),
+                config('httpcodes.bad_request')
+            );
         }
 
-        $from = $request->from_date . " 00:00:00";
-        $to   = $request->to_date   . " 23:59:59";
+        $from = $request->from_date . ' 00:00:00';
+        $to   = $request->to_date   . ' 23:59:59';
 
         $filters = [
-            'user_id'         => (empty($request->user_id) ? auth()->id() : $request->user_id),
+            'user_id'         => empty($request->user_id) ? auth()->id() : $request->user_id,
             'sender_id'       => $request->sender_id,
             'dlt_template_id' => $request->dlt_template_id,
         ];
 
         try {
-            $fileName = time().'-'.auth()->id().'.xlsx';
-            $data = Excel::store(new SmsDetailedReportExport($from, $to, $filters), $fileName, 'export_path');
-            $csvfile = 'reports/'.$fileName;
-            $return = [
-                'file_path' => $csvfile
-            ];
-            return response()->json(prepareResult(false, $return, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));
+            $fileName = time() . '-' . auth()->id() . '.csv';
+            $export = Export::create([
+                'user_id'   => auth()->id(),
+                'file_name' => $fileName,
+                'status'    => 'processing'
+            ]);
+
+            Excel::queue(
+                new SmsDetailedReportExport($from, $to, $export->id, $filters),
+                $fileName,
+                'export_path',
+                \Maatwebsite\Excel\Excel::CSV,
+                [
+                    'delimiter' => ',',
+                    'enclosure' => '"',
+                    'line_ending' => PHP_EOL,
+                    'use_bom' => true,
+                ]
+            );
+
+            return response()->json(
+                prepareResult(false, [
+                    'file_path' => $fileName,
+                    'status'    => 'processing',
+                    'export_id' => $export->id
+                ], trans('translate.export_started'), $this->intime),
+                config('httpcodes.success')
+            );
+
         } catch (\Throwable $e) {
             \Log::error($e);
-            return response()->json(prepareResult(true, $e->getMessage(), trans('translate.something_went_wrong'), $this->intime), config('httpcodes.internal_server_error'));
+
+            return response()->json(
+                prepareResult(true, $e->getMessage(), trans('translate.something_went_wrong'), $this->intime),
+                config('httpcodes.internal_server_error')
+            );
         }
     }
+
+    public function exportSmsReportZIP(Request $request)
+    {
+        $validation = \Validator::make($request->all(), [
+            'sender_id'        => 'nullable|exists:manage_sender_ids,sender_id',
+            'dlt_template_id'  => 'nullable|exists:dlt_templates,dlt_template_id',
+            'from_date'        => 'required|date',
+            'to_date'          => 'required|date',
+        ]);
+
+        if ($validation->fails()) {
+            return response()->json(
+                prepareResult(true, $validation->messages(), trans('translate.validation_failed'), $this->intime),
+                config('httpcodes.bad_request')
+            );
+        }
+
+
+        $from = $request->from_date . ' 00:00:00';
+        $to   = $request->to_date   . ' 23:59:59';
+
+        $filters = [
+            'user_id'         => empty($request->user_id) ? auth()->id() : $request->user_id,
+            'sender_id'       => $request->sender_id,
+            'dlt_template_id' => $request->dlt_template_id,
+        ];
+
+        $fileName = 'sms_report_' . time() . '_' . auth()->id() . '.zip';
+
+        $export = Export::create([
+            'user_id'   => auth()->id(),
+            'file_name' => $fileName,
+            'disk'      => 'storage_path',
+            'status'    => 'processing'
+        ]);
+
+        SmsDetailedCsvZipJob::dispatch($from, $to, $export->id, $filters)
+        ->onConnection('database')
+        ->onQueue('default');
+
+        $return = [
+            'status'  => 'processing',
+            'data'    => [
+                'export_id' => $export->id,
+                'file_name'=> $fileName
+            ]
+        ];
+
+        return response()->json(prepareResult(false, $return, trans('translate.export_started'), $this->intime), config('httpcodes.success'));
+    }
+
+    // Export table and status
+    public function exports(Request $request)
+    {
+        $export = Export::query();
+        if (in_array(loggedInUserType(), [0, 3])) {
+            if(!empty($request->user_id))
+            {
+                $export->where('user_id', $request->user_id);
+            }
+        }
+        else
+        {
+            $export->where('user_id', auth()->id());
+        }
+   
+        $return = $export->orderBy('id', 'DESC')->get();
+        return response()->json(prepareResult(false, $return, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));    
+    }
+
+    public function exportStatus($id)
+    {
+        $export = Export::where('id', $id);
+        if (in_array(loggedInUserType(), [0, 3])) {
+
+        }
+        else
+        {
+            $export->where('user_id', auth()->id());
+        }
+   
+        $export = $export->firstOrFail();
+        if ($export->status === 'completed') {
+            $return = [
+                'status' => 'completed',
+                'download_url' => url('/reports/' . $export->file_name)
+            ];
+        }
+        elseif ($export->status === 'failed') {
+            $return = [
+                'status' => 'failed',
+                'error'  => $export->error
+            ];
+        }
+        else
+        {
+            $return = [
+                'status' => 'processing'
+            ];
+        }
+
+        return response()->json(prepareResult(false, $return, trans('translate.fetched_records'), $this->intime), config('httpcodes.success'));    
+    }
+
+    public function downloadZipExport($file)
+    {
+        $exportFile = \DB::table('exports')->where('file_name', $file)->first();
+        if($exportFile)
+        {
+            $location  = $exportFile->disk;
+            if($location=='storage_path') // this is for zip file
+            {
+                $path = storage_path("app/export_path/{$file}");
+            }
+            else
+            {
+                $path = public_path("reports/{$file}");
+            }
+        }
+        abort_unless(file_exists($path), 404);
+        return response()->download($path);
+    }
+
 }

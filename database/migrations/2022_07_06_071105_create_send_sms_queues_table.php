@@ -37,6 +37,10 @@ return new class extends Migration
             
             $table->index('send_sms_id');
             $table->index('unique_key');
+            $table->index(
+                ['send_sms_id', 'err', 'stat'],
+                'idx_ssh_send_sms_err_stat'
+            );
             $table->timestamps();
         });
     }

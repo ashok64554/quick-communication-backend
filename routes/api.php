@@ -319,6 +319,15 @@ Route::namespace('App\Http\Controllers\Api\Common')->group(function () {
 
             Route::post('detailed-report', 'detailedReport')->name('detailed-report');
             Route::post('export-detailed-report', 'exportDetailedReport')->name('export-detailed-report');
+            Route::post('export-sms-report', 'exportSmsReportZIP')->name('export-sms-report');
+
+
+            //Exports
+            Route::get('exports', 'exports')->name('exports');
+            Route::get('export-status/{export_id}', 'exportStatus')->name('export-status');
+            Route::get('download-export/{file}', 'downloadZipExport')->name('download-export');
+
+
 
             Route::post('two-way-link-click-log', 'twoWayLinkClickLog')->name('two-way-link-click-log');
             Route::post('two-way-capture-record-log', 'twoWayCaptureRecordLog')->name('two-way-capture-record-log');

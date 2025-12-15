@@ -199,6 +199,8 @@ class UserController extends Controller
             $user->status = '1';
             $user->is_visible_dlt_template_group = $request->is_visible_dlt_template_group;
 
+            $user->allow_detail_report = $request->allow_detail_report;
+
             $user->allow_to_add_webhook = $request->allow_to_add_webhook;
 
             if(!empty($request->companyLogo))
@@ -358,6 +360,8 @@ class UserController extends Controller
                 $user->webhook_callback_url = null;
                 $user->webhook_signing_key = null;
             }
+
+            $user->allow_detail_report = $request->allow_detail_report;
             
             $user->save(); 
 

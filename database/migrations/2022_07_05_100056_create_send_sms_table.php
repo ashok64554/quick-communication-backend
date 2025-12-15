@@ -70,6 +70,10 @@ return new class extends Migration
 
             $table->index('parent_id');
             $table->index('user_id');
+            $table->index(
+                ['campaign_send_date_time', 'user_id', 'sender_id'],
+                'idx_sms_campaign_user_sender'
+            );
             $table->timestamps();
         });
     }

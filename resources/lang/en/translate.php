@@ -138,5 +138,6 @@ return [
     'wa_variable_is_missing_in_example' => 'Invalid Payload, Some of whatsapp variable is missing in example payload. variable is: ',
     'wa_positional_variable_is_missing_in_example' => 'Invalid Payload, Some of whatsapp positional variable is missing in example payload.',
     'chatbot_keyword_already_found'=> 'Chatbot keyword already found in other chatbot, Please use unique keyword.',
-    'invalid_request_payload'=> 'Invalid Payload, please check and resubmit the correct payload.'
+    'invalid_request_payload'=> 'Invalid Payload, please check and resubmit the correct payload.',
+    'export_started' => 'The export request has been successfully submitted. The file will be available for download once processing is complete.',
 ];

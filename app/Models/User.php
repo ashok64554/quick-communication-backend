@@ -96,6 +96,8 @@ class User extends Authenticatable
         'allow_to_add_webhook',
         'webhook_callback_url',
         'webhook_signing_key',
+
+        'allow_detail_report',
     ];
 
     protected $hidden = [
